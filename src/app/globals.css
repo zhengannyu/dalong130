@@ -1,0 +1,269 @@
+/* =====================================================================
+   大龍 130｜70 年代復古版畫風格 — 全站 token 與共用元件
+   ===================================================================== */
+:root {
+  --mustard: #f5ad00;
+  --gold: #ffbe16;
+  --brown: #8b421f;
+  --cream: #fffbe9;
+  --red: #e64b2e;
+  /* 衍生色：焦棕加深（芥末黃底上的小字用，對比 6.1:1）、奶油加深（紙張陰影） */
+  --ink: #5a2a12;
+  --cream-2: #f6ecc8;
+
+  --display: "Fraunces Variable", "Noto Sans TC", Georgia, serif;
+  --cjk: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+  --boing: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease: cubic-bezier(0.2, 0.75, 0.25, 1);
+  --gut: clamp(18px, 5vw, 64px);
+  --nav-h: 76px;
+
+  /* 不規則圓角：手剪貼紙的邊 */
+  --wonky-1: 22px 30px 18px 34px / 30px 20px 32px 18px;
+  --wonky-2: 34px 18px 30px 22px / 20px 32px 18px 30px;
+  --blob: 58% 42% 54% 46% / 46% 56% 44% 54%;
+
+  /* 紙紋與油墨斑點（SVG noise） */
+  --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .55 0 0 0 0 .3 0 0 0 0 .12 0 0 0 .22 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  --speckle: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='s'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' seed='7' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -11 0 0 0 8.4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23s)'/%3E%3C/svg%3E");
+  --halftone: radial-gradient(circle at 50% 50%, rgba(90, 42, 18, 0.28) 0 1.1px, transparent 1.6px) 0 0 / 5px 5px;
+}
+
+*,
+*::before,
+*::after { box-sizing: border-box; }
+* { margin: 0; padding: 0; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+body {
+  font-family: var(--cjk);
+  font-weight: 500;
+  color: var(--brown);
+  background: var(--cream);
+  line-height: 1.75;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+/* 紙紋：整頁淡淡的印刷顆粒 */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  pointer-events: none;
+  background: var(--grain);
+  mix-blend-mode: multiply;
+  opacity: 0.55;
+}
+img, svg { display: block; max-width: 100%; }
+a { color: inherit; }
+button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
+input, select, textarea { font: inherit; color: inherit; }
+:focus-visible { outline: 3px dashed var(--red); outline-offset: 4px; border-radius: 6px; }
+::selection { background: var(--gold); color: var(--ink); }
+
+.wrap { width: min(1240px, 100% - var(--gut) * 2); margin-inline: auto; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+/* ---------- 字體 ---------- */
+.display {
+  font-family: var(--display);
+  font-weight: 900;
+  font-variation-settings: "SOFT" 100, "WONK" 1, "opsz" 144;
+  letter-spacing: -0.025em;
+  line-height: 0.92;
+}
+.cjk-heavy { font-family: var(--cjk); font-weight: 900; letter-spacing: -0.01em; line-height: 1.15; }
+.script {
+  font-family: var(--display);
+  font-style: italic;
+  font-weight: 700;
+  font-variation-settings: "SOFT" 100, "WONK" 1, "opsz" 72;
+  letter-spacing: -0.01em;
+}
+/* 套印錯位：紅色版偏移 */
+.misreg { text-shadow: 0.045em 0.04em 0 var(--red); }
+.misreg-gold { text-shadow: 0.05em 0.045em 0 var(--gold); }
+/* 油墨斑駁：在大字與插畫上打出小白點 */
+.distress {
+  -webkit-mask-image: var(--speckle);
+  mask-image: var(--speckle);
+  -webkit-mask-size: 220px;
+  mask-size: 220px;
+}
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--display);
+  font-style: italic;
+  font-weight: 700;
+  font-variation-settings: "SOFT" 100, "WONK" 1;
+  font-size: clamp(18px, 2vw, 24px);
+  letter-spacing: 0;
+  color: var(--red);
+}
+
+/* ---------- 按鈕：厚實、手剪邊、壓下會凹 ---------- */
+.btn {
+  --bg: var(--red);
+  --fg: var(--cream);
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55em;
+  padding: 0.7em 1.35em 0.75em;
+  font-family: var(--cjk);
+  font-weight: 900;
+  font-size: 19px;
+  line-height: 1.1;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  color: var(--fg);
+  background: var(--bg);
+  border: 3px solid var(--brown);
+  border-radius: var(--wonky-1);
+  box-shadow: 4px 5px 0 var(--brown);
+  transition: transform 0.35s var(--boing), box-shadow 0.2s, border-radius 0.5s var(--ease);
+  -webkit-tap-highlight-color: transparent;
+}
+.btn:hover { transform: translate(-1px, -3px) rotate(-2.5deg); box-shadow: 6px 8px 0 var(--brown); border-radius: var(--wonky-2); }
+.btn:active { transform: translate(3px, 4px) scale(0.97, 0.94); box-shadow: 0 0 0 var(--brown); transition-duration: 0.08s; }
+.btn .arrow { display: inline-block; transition: transform 0.4s var(--boing); }
+.btn:hover .arrow { transform: translateX(5px) rotate(-8deg); }
+.btn--cream { --bg: var(--cream); --fg: var(--brown); }
+.btn--mustard { --bg: var(--mustard); --fg: var(--ink); }
+.btn--brown { --bg: var(--brown); --fg: var(--cream); border-color: var(--ink); box-shadow: 4px 5px 0 var(--ink); }
+.btn--sm { font-size: 16px; padding: 0.55em 1em 0.6em; box-shadow: 3px 4px 0 var(--brown); }
+
+/* 手寫風文字連結 */
+.ink-link {
+  font-weight: 900;
+  text-decoration: none;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='9'%3E%3Cpath d='M1 5C5 1 9 1 14 5S23 9 27 4' fill='none' stroke='%23E64B2E' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E") 0 100% / 28px 9px repeat-x;
+  padding-bottom: 9px;
+}
+.ink-link:hover { animation: wiggle-line 0.7s linear infinite; }
+@keyframes wiggle-line { to { background-position: 28px 100%; } }
+
+/* ---------- 標籤、貼紙 ---------- */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0.3em 0.75em 0.32em;
+  font-weight: 900;
+  font-size: 14px;
+  line-height: 1.2;
+  border: 2.5px solid var(--brown);
+  border-radius: 999px;
+  background: var(--cream);
+  color: var(--brown);
+}
+.chip--慶祝 { background: var(--gold); color: var(--ink); }
+.chip--傳承 { background: var(--brown); color: var(--cream); }
+.chip--展望 { background: var(--red); color: var(--cream); }
+
+/* ---------- 照片：顯示原色，不疊濾鏡；live 時滑過輕微放大 ---------- */
+.print-photo {
+  position: relative;
+  overflow: hidden;
+  background: var(--cream-2);
+  isolation: isolate;
+}
+.print-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.9s var(--ease);
+}
+.print-photo--live:hover img,
+.print-photo--live:focus-within img { transform: scale(1.04); }
+
+/* 紙膠帶 */
+.tape::after {
+  content: "";
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  width: 78px;
+  height: 22px;
+  translate: -50% 0;
+  rotate: -4deg;
+  background: rgba(255, 190, 22, 0.78);
+  -webkit-mask-image: var(--speckle);
+  mask-image: var(--speckle);
+  z-index: 3;
+}
+
+/* ---------- 動態 ---------- */
+@keyframes wobble { 0%, 100% { transform: rotate(-3deg); } 50% { transform: rotate(3deg); } }
+@keyframes bob { 0%, 100% { transform: translateY(0) rotate(0); } 50% { transform: translateY(-10px) rotate(4deg); } }
+@keyframes spin { to { transform: rotate(360deg); } }
+@keyframes squash { 0%, 100% { transform: scale(1, 1); } 40% { transform: scale(1.06, 0.92); } 70% { transform: scale(0.96, 1.05); } }
+@keyframes marquee { to { transform: translateX(-50%); } }
+.wobble { animation: wobble 3.2s ease-in-out infinite; transform-origin: 50% 90%; }
+.bob { animation: bob 4.5s ease-in-out infinite; }
+.spin-slow { animation: spin 26s linear infinite; }
+.squash { animation: squash 2.6s ease-in-out infinite; transform-origin: 50% 100%; }
+
+/* JS 載入後才把要進場的元素藏起來（無 JS 時內容照常顯示） */
+html.motion [data-reveal] { opacity: 0; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+  html { scroll-behavior: auto; }
+}
+
+/* ---------- 燈箱 ---------- */
+.lb {
+  position: fixed; inset: 0; z-index: 300;
+  display: grid; place-items: center;
+  padding: 64px 76px 28px;
+  background: rgba(90, 42, 18, 0.92);
+  animation: lb-in 0.35s var(--ease);
+}
+@keyframes lb-in { from { opacity: 0; } }
+.lb__fig { display: grid; justify-items: center; gap: 12px; max-width: min(1100px, 100%); animation: lb-pop 0.45s var(--boing); }
+@keyframes lb-pop { from { transform: scale(0.85) rotate(-3deg); opacity: 0; } }
+.lb__fig img { max-height: calc(100vh - 160px); width: auto; object-fit: contain; border: 10px solid var(--cream); border-radius: 6px; box-shadow: 8px 10px 0 var(--red); }
+.lb__fig figcaption { color: var(--cream); font-weight: 700; text-align: center; }
+.lb__fig figcaption b { font-family: var(--display); color: var(--gold); margin-right: 8px; }
+.lb__btn {
+  position: absolute; width: 54px; height: 54px;
+  display: grid; place-items: center;
+  font: 900 24px/1 var(--display); color: var(--brown);
+  background: var(--gold); border: 3px solid var(--cream); border-radius: var(--blob);
+  transition: scale 0.3s var(--boing), rotate 0.3s var(--boing);
+}
+.lb__btn:hover { scale: 1.12; rotate: -10deg; }
+.lb__x { top: 14px; right: 14px; }
+.lb__prev { left: 12px; top: 50%; translate: 0 -50%; }
+.lb__next { right: 12px; top: 50%; translate: 0 -50%; }
+@media (max-width: 600px) {
+  .lb { padding: 64px 10px 90px; }
+  .lb__prev, .lb__next { top: auto; bottom: 18px; translate: none; }
+  .lb__prev { left: calc(50% - 70px); } .lb__next { right: calc(50% - 70px); }
+}
+
+/* 插畫小動作 */
+.flame { transform-box: fill-box; transform-origin: 50% 100%; animation: flicker 0.9s ease-in-out infinite alternate; }
+.flame--b { animation-delay: -0.4s; }
+@keyframes flicker { from { transform: scale(1, 1) rotate(-4deg); } to { transform: scale(0.9, 1.12) rotate(4deg); } }
+.confetti-bit { animation: confetti-float 3.6s ease-in-out infinite; transform-box: fill-box; }
+@keyframes confetti-float { 50% { translate: 0 -8px; rotate: 20deg; } }
+/* 蛋糕的派對帽：以帽沿為支點左右晃、偶爾跳一下；帽頂星星閃一閃 */
+.cake-hat { transform-box: fill-box; transform-origin: 32% 85%; animation: hat-bop 2.8s ease-in-out infinite; }
+.cake-pom { transform-box: fill-box; transform-origin: 50% 50%; animation: pom-twinkle 1.4s ease-in-out infinite; }
+@keyframes hat-bop {
+  0%, 100% { transform: rotate(0deg) translateY(0); }
+  18% { transform: rotate(-9deg) translateY(-6px); }
+  34% { transform: rotate(4deg) translateY(0); }
+  48% { transform: rotate(-3deg); }
+  62% { transform: rotate(1.5deg); }
+}
+@keyframes pom-twinkle {
+  0%, 100% { transform: scale(1) rotate(0deg); }
+  50% { transform: scale(1.3) rotate(25deg); }
+}
+.skip { position: absolute; left: -999px; top: 8px; z-index: 400; }
+.skip:focus { left: 12px; background: var(--red); color: var(--cream); padding: 8px 14px; border-radius: 8px; }

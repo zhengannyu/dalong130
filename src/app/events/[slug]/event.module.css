@@ -1,0 +1,72 @@
+/* ---------- 海報式標頭 ---------- */
+.poster { position: relative; display: grid; grid-template-columns: 1.1fr 1fr; gap: clamp(24px, 4vw, 56px); align-items: center; margin-top: clamp(20px, 3vw, 36px); padding: clamp(30px, 5vw, 60px) clamp(22px, 4vw, 56px); isolation: isolate; }
+.bg { position: absolute; inset: 0; width: 100%; height: 100%; z-index: -1; filter: drop-shadow(7px 9px 0 var(--brown)); }
+.crumbs { display: flex; flex-wrap: wrap; gap: 6px; list-style: none; font-weight: 900; font-size: 14px; color: var(--ink); margin-bottom: 20px; }
+.crumbs li + li::before { content: "✸"; margin-right: 6px; color: var(--red); }
+.crumbs a { text-decoration: none; border-bottom: 2px solid currentColor; }
+.no { display: flex; align-items: center; gap: 12px; }
+.no b { font-size: clamp(34px, 4vw, 52px); color: var(--cream); text-shadow: 0.05em 0.05em 0 var(--brown); line-height: 1; }
+.title { margin: 14px 0 24px; font-size: clamp(36px, 5.4vw, 72px); color: var(--brown); line-height: 1.08; text-wrap: balance; }
+.sub { display: block; margin-top: 8px; font-size: 0.5em; color: var(--ink); }
+.label { display: grid; grid-template-columns: repeat(3, auto); border: 3px solid var(--brown); border-radius: 12px; background: var(--cream); overflow: hidden; box-shadow: 5px 6px 0 var(--brown); }
+.label div { padding: 10px 14px 12px; }
+.label div + div { border-left: 3px solid var(--brown); }
+.label dt { font-size: 17px; color: var(--red); font-style: italic; }
+.label dd { font-weight: 900; font-size: 15px; line-height: 1.45; color: var(--brown); }
+.visual { position: relative; }
+.cover { display: block; width: 100%; aspect-ratio: 4 / 3.3; border: 4px solid var(--brown); border-radius: 46% 54% 50% 50% / 30% 30% 22% 22%; box-shadow: 9px 10px 0 var(--red); cursor: zoom-in; }
+.artBox { display: grid; place-items: center; aspect-ratio: 1; border: 4px solid var(--brown); border-radius: var(--blob); background: var(--gold) repeating-linear-gradient(-45deg, transparent 0 16px, rgba(255, 251, 233, 0.5) 16px 26px); box-shadow: 9px 10px 0 var(--red); }
+.art { width: 62%; height: auto; }
+.catEn { position: absolute; right: -10px; bottom: -22px; font-size: clamp(30px, 3.6vw, 48px); color: var(--cream); background: var(--brown); padding: 4px 18px 10px; border-radius: var(--wonky-2); rotate: -6deg; }
+.star { position: absolute; width: 60px; left: 46%; top: -22px; }
+.spark { position: absolute; width: 36px; right: 4%; top: 20px; }
+
+/* ---------- 內文 ---------- */
+.story { max-width: 820px; padding: clamp(60px, 8vw, 100px) 0 clamp(40px, 6vw, 70px); }
+.lead { font-size: clamp(24px, 3vw, 36px); color: var(--brown); line-height: 1.4; margin-bottom: 26px; text-wrap: balance; }
+.body p { font-size: clamp(16px, 1.6vw, 18px); line-height: 2; color: var(--ink); margin-bottom: 16px; }
+.quote { position: relative; margin: 40px 0 0; padding: 26px 30px 26px 84px; background: var(--red); color: var(--cream); border: 3px solid var(--brown); border-radius: var(--wonky-1); box-shadow: 7px 8px 0 var(--brown); }
+.quote p { font-size: clamp(20px, 2.4vw, 28px); line-height: 1.5; }
+.qmark { position: absolute; left: 16px; top: -6px; font-size: 120px; line-height: 1; color: var(--gold); }
+
+/* ---------- 相片：無底色，內容寬 740px，單欄，照片 100% 寬（保留原比例，不裁切） ---------- */
+.photos { padding: clamp(60px, 8vw, 100px) 0; }
+.photos > :global(.wrap) { width: min(740px, 100% - var(--gut) * 2); }
+.photosTitle { font-size: clamp(32px, 4.4vw, 56px); color: var(--brown); margin-bottom: clamp(30px, 4vw, 50px); }
+.sheet { display: grid; grid-template-columns: 1fr; gap: clamp(28px, 4vw, 44px); }
+.framePhoto { display: block; width: 100%; border: 9px solid var(--cream); outline: 3px solid var(--brown); border-radius: 4px; box-shadow: 7px 8px 0 var(--brown); cursor: zoom-in; transition: rotate 0.4s var(--boing), scale 0.4s var(--boing); }
+.sheet .framePhoto img { width: 100%; height: auto; object-fit: initial; }
+.framePhoto:hover { rotate: 1deg; scale: 1.02; }
+.frame figcaption { margin-top: 12px; font-weight: 900; font-size: 15px; color: var(--ink); display: flex; gap: 8px; align-items: center; }
+.frame figcaption::before { content: "✸"; color: var(--red); }
+.empty { position: relative; display: grid; justify-items: center; text-align: center; gap: 6px; padding: 40px 20px 46px; max-width: 620px; margin: 0 auto; background: var(--cream); color: var(--brown); border: 3px solid var(--ink); border-radius: var(--wonky-2); box-shadow: 8px 9px 0 var(--gold); }
+.emptyArt { width: 160px; height: auto; margin-bottom: 8px; }
+.emptyConfetti { position: absolute; width: 80%; top: 10px; }
+.empty .cjk-heavy, .empty :global(.cjk-heavy) { font-size: 24px; }
+
+/* ---------- 上下篇 ---------- */
+.pn { display: grid; grid-template-columns: 1fr auto 1fr; gap: 20px; align-items: center; padding-top: clamp(40px, 6vw, 70px); }
+.pnLink { display: flex; align-items: center; gap: 14px; text-decoration: none; color: var(--brown); }
+.next { justify-content: flex-end; text-align: right; }
+.pnLink small { display: block; color: var(--red); font-size: 18px; }
+.pnLink b { display: block; font-size: clamp(17px, 2vw, 22px); }
+.pnLink em { font-style: normal; font-size: 14px; font-weight: 700; color: var(--ink); }
+.pnArrow { flex: none; display: grid; place-items: center; width: 62px; height: 62px; border-radius: var(--blob); background: var(--gold); border: 3px solid var(--brown); box-shadow: 4px 5px 0 var(--brown); font: 900 26px/1 var(--display); transition: translate 0.4s var(--boing), rotate 0.4s var(--boing); }
+.prev:hover .pnArrow { translate: -6px 0; rotate: -12deg; }
+.next:hover .pnArrow { translate: 6px 0; rotate: 12deg; }
+
+@media (max-width: 860px) {
+  .poster { grid-template-columns: 1fr; }
+  .visual { order: -1; width: min(460px, 100%); justify-self: center; }
+  .label { grid-template-columns: 1fr; }
+  .label div + div { border-left: 0; border-top: 3px solid var(--brown); }
+  .pn { grid-template-columns: 1fr 1fr; }
+  .pn > :global(.btn) { grid-column: 1 / -1; grid-row: 2; justify-self: center; }
+}
+@media (max-width: 520px) {
+  .quote { padding: 22px 20px 22px 60px; }
+  .qmark { font-size: 90px; left: 10px; }
+  .pnLink b { font-size: 15px; }
+  .pnLink em { display: none; }
+  .pnArrow { width: 48px; height: 48px; }
+}

@@ -1,0 +1,54 @@
+.headArt { position: relative; aspect-ratio: 1 / 0.9; }
+.env { position: absolute; width: 74%; left: 0; bottom: 0; }
+.flower { position: absolute; width: 44%; right: 0; top: 0; }
+.subnav { position: sticky; top: calc(var(--nav-h) + 10px); z-index: 20; display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; margin-bottom: 10px; }
+.subnav a { padding: 0.45em 1.1em 0.5em; font-weight: 900; text-decoration: none; background: var(--cream); border: 3px solid var(--brown); border-radius: var(--wonky-1); box-shadow: 3px 4px 0 var(--brown); transition: rotate 0.35s var(--boing), background 0.2s; }
+.subnav a:hover { rotate: -3deg; background: var(--gold); }
+.sec { padding: clamp(60px, 8vw, 100px) 0; scroll-margin-top: 140px; }
+.h2 { font-size: clamp(36px, 5vw, 64px); color: var(--brown); margin: 4px 0 14px; }
+.lead { max-width: 36em; color: var(--ink); font-weight: 700; margin-bottom: clamp(30px, 4vw, 48px); }
+
+/* 影像紀事 */
+.records { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(20px, 3vw, 36px); margin-top: 30px; }
+.rec { display: flex; flex-direction: column; text-decoration: none; background: var(--cream); border: 3px solid var(--brown); border-radius: 14px; box-shadow: 7px 8px 0 var(--brown); overflow: hidden; transition: rotate 0.45s var(--boing), translate 0.45s var(--boing), box-shadow 0.2s; }
+.rec:hover { rotate: -2deg; translate: 0 -6px; box-shadow: 10px 12px 0 var(--red); }
+.recPic { aspect-ratio: 4 / 3; border-bottom: 3px solid var(--brown); }
+.recArt { display: grid; place-items: center; aspect-ratio: 4 / 3; background: var(--gold); border-bottom: 3px solid var(--brown); }
+.recArt svg { width: 46%; }
+.recBody { display: grid; gap: 4px; padding: 16px 20px 22px; }
+.recBody b { color: var(--red); font-size: 20px; }
+.recBody strong { font-size: 24px; }
+.recBody span { color: var(--ink); font-size: 15px; }
+.soon { opacity: 0.85; }
+
+/* 祝賀牆 */
+.wallSec { background: var(--gold); padding: clamp(60px, 8vw, 100px) 0; border-block: 3px solid var(--brown); scroll-margin-top: 140px; }
+.wishGrid { display: grid; grid-template-columns: 340px 1fr; gap: clamp(24px, 4vw, 56px); align-items: start; }
+.wishForm { display: grid; gap: 14px; padding: 26px 24px 28px; background: var(--cream); border: 3px solid var(--brown); border-radius: var(--wonky-2); box-shadow: 8px 9px 0 var(--brown); }
+.formTitle { font-size: 38px; color: var(--red); font-style: italic; }
+.field { display: grid; gap: 6px; border: 0; }
+.field > span, .field legend { font-weight: 900; font-size: 15px; display: flex; justify-content: space-between; }
+.field small { color: var(--red); }
+.field input, .field textarea, .field select { width: 100%; padding: 12px 14px; font-size: 16px; font-weight: 500; color: var(--ink); background: #fff; border: 3px solid var(--brown); border-radius: 12px; resize: vertical; transition: box-shadow 0.2s, rotate 0.3s var(--boing); }
+.field input:focus, .field textarea:focus, .field select:focus { outline: none; box-shadow: 4px 5px 0 var(--red); rotate: -0.6deg; }
+.err { color: var(--red); font-weight: 900; }
+.notes { list-style: none; display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 26px 20px; align-items: start; }
+.note { position: relative; padding: 24px 20px 16px; border: 3px solid var(--brown); border-radius: 6px 18px 8px 16px; box-shadow: 5px 6px 0 var(--brown); transition: rotate 0.4s var(--boing), scale 0.4s var(--boing); }
+.note::before { content: ""; position: absolute; top: -12px; left: 50%; width: 64px; height: 20px; translate: -50% 0; rotate: -3deg; background: rgba(230, 75, 46, 0.75); }
+.note:hover { rotate: 0deg !important; scale: 1.04; }
+.note p { font-weight: 900; font-size: 17px; line-height: 1.6; }
+.note footer { margin-top: 10px; font-size: 13.5px; font-weight: 700; display: flex; justify-content: space-between; gap: 6px; }
+.note em { font-style: normal; font-size: 11px; padding: 2px 8px; border-radius: 99px; background: var(--brown); color: var(--cream); }
+.noteCream { background: var(--cream); color: var(--brown); }
+.noteGold { background: #fff0b8; color: var(--brown); }
+.noteRed { background: var(--red); color: var(--cream); }
+.noteRed footer em { background: var(--cream); color: var(--red); }
+.noteMustard { background: var(--mustard); color: var(--ink); }
+
+@media (max-width: 900px) {
+  .records { grid-template-columns: 1fr 1fr; }
+  .wishGrid { grid-template-columns: 1fr; }
+}
+@media (max-width: 560px) {
+  .records { grid-template-columns: 1fr; }
+}

@@ -1,0 +1,142 @@
+/* ================= HERO ================= */
+.hero { position: relative; padding: clamp(18px, 3vw, 36px) 0 clamp(40px, 6vw, 70px); overflow: hidden; }
+.heroTop { position: relative; display: grid; grid-template-columns: 1fr auto 1fr; align-items: end; gap: 20px; }
+.meta { display: grid; gap: 2px; font-weight: 900; font-size: 15px; letter-spacing: 0.12em; align-self: center; }
+.meta b { font-size: clamp(30px, 3.4vw, 46px); color: var(--red); letter-spacing: -0.01em; }
+.metaR { text-align: right; justify-items: end; }
+.logoWrap { position: relative; display: grid; justify-items: center; }
+.hello { position: absolute; top: -4px; left: -12%; z-index: 2; font-size: clamp(24px, 3vw, 38px); color: var(--red); white-space: nowrap; rotate: -6deg; }
+.logoH1 { margin: 54px 0 0; } /* 留出空間給上方的 Happy 130th Birthday!，不壓到「龍躍傳承」 */
+.logo { width: min(470px, 70vw); height: auto; }
+.dec { position: absolute; pointer-events: none; }
+.decStar { width: 70px; right: 20%; top: 6px; }
+.decSpark { width: 46px; left: 22%; bottom: 30px; }
+.decSquig { width: 90px; right: 6%; bottom: 0; }
+
+/* 海報區 */
+.poster { position: relative; margin-top: clamp(24px, 4vw, 44px); padding: clamp(36px, 5vw, 64px) clamp(18px, 4vw, 56px) clamp(36px, 5vw, 56px); isolation: isolate; }
+.posterBg { position: absolute; inset: 0; width: 100%; height: 100%; z-index: -2; filter: drop-shadow(8px 10px 0 var(--brown)); }
+.blob { position: absolute; z-index: -1; background: var(--gold); border-radius: var(--blob); opacity: 0.95; }
+.blob1 { width: 34%; height: 30%; left: 4%; top: 6%; rotate: -12deg; }
+.blob2 { width: 30%; height: 34%; right: 6%; top: 26%; rotate: 20deg; border-radius: 42% 58% 38% 62% / 55% 40% 60% 45%; }
+.blob3 { width: 40%; height: 22%; left: 24%; bottom: 14%; rotate: 6deg; }
+.posterHead { text-align: center; color: var(--brown); }
+.date { font-size: clamp(96px, 17vw, 230px); line-height: 0.82; letter-spacing: -0.04em; }
+.dateSub { display: flex; justify-content: center; align-items: baseline; gap: 14px; margin-top: 8px; font-weight: 900; color: var(--ink); }
+.dateSub :global(.display) { font-size: 26px; color: var(--cream); background: var(--brown); padding: 2px 12px 4px; border-radius: var(--wonky-1); }
+.party { margin-top: 12px; font-size: clamp(32px, 5.4vw, 68px); color: var(--brown); text-shadow: 0.05em 0.05em 0 var(--cream); }
+
+/* 舞台構圖：一條橫跨的長龍，學校在龍身的凹處（被龍身擋住下半），蛋糕在右側被龍尾圈著。
+   舞台比例＝龍的外框 (623.49 : 407.65)；疊放順序：學校 → 龍 → 蛋糕 */
+.stage { position: relative; margin: clamp(10px, 2vw, 20px) auto 0; width: min(920px, 100%); aspect-ratio: 623.49 / 407.65; }
+.stage > * { position: absolute; }
+.school { left: 40.5%; bottom: 36%; width: 33%; z-index: 1; }
+.dragon { inset: 0; z-index: 2; }
+.dragon img { display: block; width: 100%; height: auto; animation: float 5s ease-in-out infinite; }
+.cake { right: 0; bottom: 39%; width: 25%; z-index: 3; }
+.school svg, .cake svg { width: 100%; height: auto; }
+@keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+.sp1 { width: 40px; left: 30%; top: 6%; z-index: 4; }
+.sp2 { width: 34px; right: 30%; top: 18%; z-index: 4; }
+.st1 { width: 48px; left: 4%; top: 10%; z-index: 4; }
+
+.icons { display: grid; grid-template-columns: repeat(4, 1fr); gap: clamp(10px, 2vw, 24px); margin-top: clamp(24px, 4vw, 44px); padding-top: clamp(20px, 3vw, 32px); border-top: 3px dashed rgba(139, 66, 31, 0.55); }
+.icon { display: grid; justify-items: center; text-align: center; gap: 4px; padding: 10px 6px; text-decoration: none; color: var(--brown); border-radius: 18px; transition: rotate 0.4s var(--boing), translate 0.4s var(--boing), background 0.25s; }
+.iconArt { width: clamp(70px, 9vw, 112px); height: auto; transition: rotate 0.5s var(--boing), scale 0.5s var(--boing); }
+.icon b { font-size: clamp(18px, 2vw, 22px); color: var(--brown); }
+.icon span { font-size: 14px; font-weight: 700; color: var(--ink); }
+.icon:hover { background: rgba(255, 251, 233, 0.55); translate: 0 -4px; }
+.icon:hover .iconArt { rotate: -10deg; scale: 1.1; }
+.cdWrap { margin-top: clamp(24px, 3vw, 36px); color: var(--ink); }
+
+/* ================= 回憶 ================= */
+.memories { padding: clamp(70px, 10vw, 130px) 0 clamp(60px, 8vw, 110px); position: relative; overflow: hidden; }
+.memGrid { display: grid; grid-template-columns: 1fr 1.05fr; gap: clamp(30px, 5vw, 80px); align-items: center; }
+.memTitle { text-wrap: balance; font-size: clamp(38px, 5.6vw, 78px); line-height: 1.12; color: var(--brown); margin: 10px 0 22px; }
+.hl { position: relative; z-index: 0; white-space: nowrap; }
+.hl::before { content: ""; position: absolute; z-index: -1; inset: 0.48em -0.12em 0.02em; background: var(--gold); border-radius: var(--wonky-2); rotate: -1.5deg; }
+.memLead { font-size: clamp(16px, 1.6vw, 18px); max-width: 30em; color: var(--ink); }
+.memCta { position: relative; margin-top: 28px; display: inline-block; }
+.memArrow { position: absolute; left: calc(100% + 8px); top: -36px; width: 130px; }
+.memPhotos { position: relative; min-height: clamp(420px, 46vw, 600px); }
+.stamp { position: absolute; width: 56%; }
+.stamp0 { left: 0; top: 0; }
+.stamp1 { right: 0; top: 8%; width: 50%; }
+.stamp2 { left: 10%; bottom: 0; width: 50%; }
+.stamp3 { right: 4%; bottom: 6%; width: 44%; }
+.stampPhoto { display: block; width: 100%; aspect-ratio: 4 / 3; border: 9px solid var(--cream); outline: 3px solid var(--brown); box-shadow: 8px 9px 0 var(--brown); border-radius: 4px; cursor: zoom-in; transition: rotate 0.4s var(--boing), scale 0.4s var(--boing), box-shadow 0.2s; }
+.stampPhoto:hover { rotate: 2deg; scale: 1.05; box-shadow: 10px 12px 0 var(--red); z-index: 3; }
+.memBurst { position: absolute; width: 130px; height: 130px; left: 44%; top: 38%; z-index: 4; color: var(--cream); line-height: 0.9; }
+.memBurst b { display: block; font-size: 26px; }
+.memBurst b:first-child { font-style: italic; font-size: 20px; }
+
+/* ================= 年份 ================= */
+.years { background: var(--brown); color: var(--cream); padding: clamp(40px, 6vw, 70px) 0 clamp(50px, 7vw, 80px); overflow: hidden; }
+.yearRow { display: flex; align-items: center; justify-content: space-between; gap: 2vw; }
+/* .distress 的斑駁遮罩只顯示在元素外框內：字距為負、行高 0.85、陰影偏移都會讓數字邊緣被切掉。
+   所以用 padding 把外框撐大，再用等量負 margin 抵銷，版面位置不變；字級也縮一點，避免大螢幕時整排超出容器 */
+.y1, .y2 { font-size: clamp(80px, 12.5vw, 190px); line-height: 0.85; letter-spacing: -0.05em; padding: 0.12em 0.14em 0.16em; margin: -0.12em -0.14em -0.16em; }
+.y1 { color: var(--mustard); }
+.y2 { color: var(--cream); text-shadow: 0.04em 0.04em 0 var(--red); }
+.yearArrow { width: clamp(80px, 14vw, 190px); flex: none; }
+.yearsText { display: grid; justify-items: start; gap: 16px; max-width: 640px; margin: clamp(20px, 3vw, 36px) 0 0 auto; }
+.yearsText h2 { font-size: clamp(28px, 3.8vw, 48px); color: var(--gold); text-wrap: balance; }
+.miles { list-style: none; display: grid; grid-template-columns: repeat(6, 1fr); gap: 14px; margin-top: clamp(40px, 6vw, 70px); }
+.mile { display: grid; gap: 6px; height: 100%; padding: 16px 14px 18px; text-decoration: none; color: var(--brown); background: var(--cream); border: 3px solid var(--ink); border-radius: var(--wonky-1); box-shadow: 5px 6px 0 var(--gold); transition: rotate 0.4s var(--boing), translate 0.4s var(--boing), box-shadow 0.2s; }
+.mile b { font-size: clamp(30px, 3vw, 40px); color: var(--red); line-height: 1; }
+.mile span { font-size: 14px; font-weight: 700; line-height: 1.45; color: var(--ink); }
+.mile:hover { rotate: -3deg; translate: 0 -6px; box-shadow: 7px 9px 0 var(--red); }
+
+/* ================= 活動 ================= */
+.events { padding: clamp(70px, 9vw, 120px) 0 clamp(50px, 7vw, 90px); }
+.evHead { position: relative; text-align: center; margin-bottom: clamp(30px, 4vw, 48px); color: var(--ink); }
+.evBig { font-size: clamp(54px, 10vw, 150px); color: var(--mustard); line-height: 0.9; }
+.evTitle { font-size: clamp(30px, 4vw, 52px); color: var(--brown); margin: -0.2em 0 6px; position: relative; }
+.evStar { position: absolute; width: 64px; right: 8%; top: -10px; }
+.more { text-align: center; margin-top: clamp(50px, 6vw, 80px); }
+
+/* ================= 紀念 ================= */
+.memorial { background: var(--red); color: var(--cream); padding: clamp(60px, 8vw, 110px) 0; border-block: 3px solid var(--brown); }
+.memoTitle { text-align: center; font-size: clamp(32px, 5vw, 64px); }
+.memoTitle :global(.display) { color: var(--gold); padding: 0 0.12em; }
+.badges { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(20px, 4vw, 60px); margin-top: clamp(36px, 5vw, 60px); }
+.badgeLink { display: grid; justify-items: center; gap: 6px; text-align: center; text-decoration: none; transition: translate 0.4s var(--boing); }
+.badgeLink:hover { translate: 0 -8px; }
+.badge { width: clamp(180px, 22vw, 250px); aspect-ratio: 1; }
+.badgeIn { display: grid; place-items: center; width: 64%; aspect-ratio: 1; margin: auto; border-radius: 50%; background: var(--cream); border: 3px solid var(--brown); box-shadow: 5px 6px 0 var(--brown); transition: rotate 0.5s var(--boing); }
+.badge > div:last-child { width: 100%; height: 100%; display: grid; place-items: center; }
+.badgeLink:hover .badgeIn { rotate: -12deg; }
+.badgeArt { width: 64%; height: auto; }
+.badgeLink b { font-size: clamp(22px, 2.4vw, 28px); margin-top: 6px; }
+.badgeLink span { font-weight: 700; color: #ffe7c2; }
+
+/* ================= RWD ================= */
+@media (max-width: 900px) {
+  .heroTop { grid-template-columns: 1fr 1fr; }
+  .logoWrap { grid-column: 1 / -1; order: -1; }
+  .meta b { font-size: 28px; }
+  .hello { left: 0; }
+  .memGrid { grid-template-columns: 1fr; }
+  .memArrow { display: none; }
+  .miles { grid-template-columns: repeat(3, 1fr); }
+  .icons { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 600px) {
+  .logo { width: min(330px, 84vw); }
+  .hello { font-size: 22px; top: -10px; }
+  .logoH1 { margin-top: 36px; }
+  .decStar { display: none; }
+  .decSpark, .decSquig { display: none; }
+  /* 手機：構圖不變，整組等比縮小 */
+  .stage { width: 100%; }
+  .sp1 { width: 28px; }
+  .sp2 { width: 24px; }
+  .st1 { display: none; }
+  .memPhotos { min-height: 360px; }
+  .memBurst { width: 104px; height: 104px; left: 38%; top: 34%; }
+  .memBurst b { font-size: 20px; }
+  .yearRow { flex-wrap: wrap; justify-content: center; }
+  .yearArrow { rotate: 90deg; width: 70px; }
+  .miles { grid-template-columns: repeat(2, 1fr); }
+  .badges { grid-template-columns: 1fr; }
+}

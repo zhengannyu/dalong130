@@ -1,0 +1,111 @@
+.subnav { position: sticky; top: calc(var(--nav-h) + 10px); z-index: 20; display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; }
+.subnav a { padding: 0.45em 1.1em 0.5em; font-weight: 900; text-decoration: none; background: var(--cream); border: 3px solid var(--brown); border-radius: var(--wonky-1); box-shadow: 3px 4px 0 var(--brown); transition: rotate 0.35s var(--boing), background 0.2s; }
+.subnav a:hover { rotate: -3deg; background: var(--gold); }
+.sec { padding: clamp(60px, 8vw, 100px) 0; scroll-margin-top: 140px; }
+.h2 { font-size: clamp(32px, 4.6vw, 58px); color: var(--brown); margin: 4px 0 clamp(26px, 4vw, 44px); text-wrap: balance; }
+
+.progHead { text-align: center; }
+
+/* 節目表：甘特圖。每張卡片 --l（左緣）與 --w（寬度）由開始、結束時間算出，基準是底下 8:00–16:00 的時間軸 */
+.sched {
+  list-style: none; display: grid; gap: 18px; padding-bottom: 22px;
+  background:
+    repeating-linear-gradient(to bottom, rgba(139, 66, 31, 0.4) 0 6px, transparent 6px 12px) 0 0 / 2px 100% no-repeat,
+    repeating-linear-gradient(to bottom, rgba(139, 66, 31, 0.4) 0 6px, transparent 6px 12px) 50% 0 / 2px 100% no-repeat,
+    repeating-linear-gradient(to bottom, rgba(139, 66, 31, 0.4) 0 6px, transparent 6px 12px) 100% 0 / 2px 100% no-repeat;
+}
+.sched > li { margin-left: var(--l); width: var(--w); min-width: min(250px, calc(100% - var(--l))); }
+.slot { background: var(--cream); border: 3px solid var(--brown); border-radius: 18px; box-shadow: 6px 7px 0 var(--brown); transition: box-shadow 0.2s, translate 0.35s var(--boing); }
+.slot:hover { translate: 0 -3px; box-shadow: 8px 10px 0 var(--red); }
+.slot summary { display: grid; grid-template-columns: 1fr auto; grid-template-areas: "time time" "body body" "place plus"; align-items: center; gap: 6px 12px; padding: 14px 18px 14px; cursor: pointer; list-style: none; }
+.slot summary::-webkit-details-marker, .q summary::-webkit-details-marker { display: none; }
+.time { grid-area: time; font-size: clamp(20px, 2vw, 26px); color: var(--red); white-space: nowrap; }
+.time i { font-style: normal; color: var(--brown); margin: 0 4px; }
+.slotBody { grid-area: body; display: grid; justify-items: start; }
+.slotBody b { font-size: clamp(18px, 1.8vw, 21px); line-height: 1.3; }
+.place { grid-area: place; justify-self: start; background: var(--gold); }
+.plus { grid-area: plus; display: grid; place-items: center; width: 34px; height: 34px; border-radius: var(--blob); background: var(--red); color: var(--cream); border: 3px solid var(--brown); font: 900 22px/1 var(--display); transition: rotate 0.45s var(--boing); }
+details[open] > summary .plus { rotate: 135deg; }
+.slotInfo { padding: 0 18px 16px; color: var(--ink); font-weight: 700; font-size: 15px; line-height: 1.65; }
+.ch { margin-right: 8px; }
+/* 底下的時間軸 */
+.axis { display: grid; grid-template-columns: 1fr 1fr 1fr; margin-top: 0; padding-top: 10px; border-top: 6px solid var(--mustard); color: var(--ink); font-size: 18px; }
+.axis span:nth-child(1) { justify-self: start; }
+.axis span:nth-child(2) { justify-self: center; }
+.axis span:nth-child(3) { justify-self: end; }
+
+@media (max-width: 700px) {
+  /* 手機：沒有時間軸，卡片全部 100% 寬、一張一列 */
+  .sched { background: none; padding-bottom: 0; }
+  .sched > li { margin-left: 0; width: 100%; min-width: 0; }
+  .axis { display: none; }
+}
+
+/* 地圖 */
+.mapSec { background: var(--cream-2); padding: clamp(60px, 8vw, 100px) 0; border-block: 3px solid var(--brown); scroll-margin-top: 140px; }
+.mapGrid { display: grid; grid-template-columns: 1.6fr 1fr; gap: clamp(20px, 3vw, 40px); align-items: start; }
+.mapBox { background: var(--gold); padding: clamp(10px, 2vw, 20px); border: 3px solid var(--brown); border-radius: var(--wonky-2); box-shadow: 8px 9px 0 var(--brown); }
+.map { width: 100%; height: auto; }
+.mapNote { margin-top: 8px; font-size: 13px; font-weight: 900; color: var(--ink); text-align: right; }
+.zone { cursor: pointer; outline: none; }
+.zoneShape > * { fill: var(--cream-2); transition: fill 0.25s; }
+.zone:nth-of-type(odd) .zoneShape > * { fill: #fff3c4; }
+.zone:hover .zoneShape > *, .zone:focus-visible .zoneShape > *, .zoneOn .zoneShape > * { fill: var(--gold); }
+.zone:focus-visible .zoneShape { stroke: var(--red); }
+.pin { transition: scale 0.35s var(--boing); transform-box: fill-box; transform-origin: center; }
+.zone:hover .pin, .zoneOn .pin { scale: 1.3; }
+.route { fill: none; stroke: var(--red); stroke-width: 5; stroke-dasharray: 4 12; stroke-linecap: round; animation: march 1.2s linear infinite; }
+@keyframes march { to { stroke-dashoffset: -32; } }
+.zoneCard { padding: 22px 24px 24px; background: var(--brown); color: var(--cream); border: 3px solid var(--ink); border-radius: var(--wonky-1); box-shadow: 7px 8px 0 var(--red); animation: pop 0.45s var(--boing); }
+@keyframes pop { from { scale: 0.92; rotate: -2deg; opacity: 0.4; } }
+.zoneCard > span { color: var(--gold); font-size: 20px; font-style: italic; }
+.zoneCard h3 { font-size: 26px; margin: 4px 0 8px; }
+.zoneChips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+.legend { list-style: none; margin-top: 18px; display: grid; gap: 4px; }
+.legend button { display: flex; align-items: center; gap: 12px; width: 100%; padding: 8px 10px; font-weight: 900; text-align: left; border-radius: 12px; transition: background 0.2s, translate 0.3s var(--boing); }
+.legend button:hover, .legend button[aria-pressed="true"] { background: var(--gold); translate: 6px 0; }
+.legend i { display: grid; place-items: center; width: 30px; height: 30px; border-radius: var(--blob); background: var(--brown); color: var(--cream); font-style: normal; font-size: 16px; flex: none; }
+.legend button[aria-pressed="true"] i { background: var(--red); }
+
+/* 交通 */
+.goSec { background: var(--mustard); padding: clamp(40px, 6vw, 70px) 0; scroll-margin-top: 140px; }
+.goSec :global(.eyebrow) { color: var(--brown); }
+.goGrid { display: grid; grid-template-columns: 1.6fr 1fr; gap: clamp(24px, 4vw, 56px); align-items: start; }
+.tabs { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 22px; }
+.tab { padding: 0.5em 1.2em 0.55em; font-weight: 900; font-size: 17px; background: var(--cream); border: 3px solid var(--brown); border-radius: var(--wonky-2); box-shadow: 3px 4px 0 var(--brown); transition: rotate 0.35s var(--boing), background 0.2s, color 0.2s; }
+.tab:hover { rotate: -3deg; }
+.tab[aria-selected="true"] { background: var(--brown); color: var(--cream); rotate: 2deg; }
+.routePanel { padding: 26px 28px; background: var(--cream); border: 3px solid var(--brown); border-radius: 16px; box-shadow: 8px 9px 0 var(--brown); animation: pop 0.45s var(--boing); }
+.routePanel h3 { font-size: clamp(22px, 2.6vw, 30px); display: flex; flex-wrap: wrap; align-items: center; gap: 12px; }
+.eta { font-size: 14px; padding: 4px 12px; background: var(--gold); border: 2.5px solid var(--brown); border-radius: 99px; }
+.steps { list-style: none; counter-reset: s; margin: 20px 0 16px; }
+.steps li { position: relative; padding: 0 0 20px 58px; counter-increment: s; color: var(--ink); }
+.steps li::before { content: counter(s); position: absolute; left: 0; top: -2px; width: 40px; height: 40px; display: grid; place-items: center; border-radius: var(--blob); background: var(--red); color: var(--cream); border: 3px solid var(--brown); font: 900 19px/1 var(--display); }
+.steps li::after { content: ""; position: absolute; left: 19px; top: 40px; bottom: 0; width: 3px; background: repeating-linear-gradient(var(--brown) 0 5px, transparent 5px 10px); }
+.steps li:last-child::after { display: none; }
+.steps b { display: block; font-weight: 900; font-size: 18px; color: var(--brown); }
+.addr { position: relative; padding: 28px 26px; background: var(--red); color: var(--cream); border: 3px solid var(--brown); border-radius: var(--wonky-1); box-shadow: 8px 9px 0 var(--brown); margin-top: 120px; }
+.addr > p:first-of-type { color: var(--gold); font-size: 30px; font-style: italic; }
+.addr h3 { font-size: 28px; margin: 4px 0 8px; }
+.addr p { font-weight: 700; margin-bottom: 18px; }
+.addrStar { position: absolute; width: 60px; right: -18px; top: -24px; }
+
+/* FAQ */
+.faq { display: grid; gap: 14px; max-width: 900px; }
+.q { background: var(--cream); border: 3px solid var(--brown); border-radius: 14px; box-shadow: 5px 6px 0 var(--brown); }
+.q[open] { box-shadow: 6px 7px 0 var(--red); }
+.q summary { display: flex; align-items: center; gap: 16px; padding: 16px 18px; cursor: pointer; list-style: none; }
+.q summary b { flex: 1; font-size: clamp(17px, 1.9vw, 20px); }
+.qn { font-size: 28px; color: var(--red); }
+.q p { padding: 0 24px 20px 66px; color: var(--ink); font-weight: 700; }
+
+@media (max-width: 900px) {
+  .mapGrid, .goGrid { grid-template-columns: 1fr; }
+  .addr { margin-top: 0; }
+}
+@media (max-width: 640px) {
+  .slot summary { grid-template-columns: 1fr auto; gap: 10px 12px; }
+  .time { grid-column: 1 / -1; border-right: 0; padding: 0; }
+  .place { justify-self: start; }
+  .q p { padding: 0 18px 18px; }
+}

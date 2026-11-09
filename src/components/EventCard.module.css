@@ -1,0 +1,64 @@
+/* ---------- 篩選鈕 ---------- */
+.filters { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-bottom: clamp(36px, 5vw, 60px); }
+.filter {
+  display: inline-flex; align-items: baseline; gap: 8px;
+  padding: 0.5em 1.2em 0.55em; font-weight: 900; font-size: 18px; letter-spacing: 0.1em;
+  background: var(--cream); color: var(--brown);
+  border: 3px solid var(--brown); border-radius: var(--wonky-2); box-shadow: 3px 4px 0 var(--brown);
+  transition: rotate 0.35s var(--boing), translate 0.35s var(--boing), background 0.2s, box-shadow 0.15s;
+}
+.filter small { font-size: 15px; color: var(--red); }
+.filter:hover { rotate: -3deg; translate: 0 -2px; }
+.filter:active { translate: 2px 3px; box-shadow: 0 0 0 var(--brown); }
+.filter[aria-pressed="true"] { background: var(--brown); color: var(--cream); rotate: 2deg; }
+.filter[aria-pressed="true"] small { color: var(--gold); }
+
+/* ---------- 版面：整齊的等寬網格，每張卡片水平、垂直對齊，同列等高 ---------- */
+.grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(28px, 4vw, 52px) clamp(20px, 3vw, 40px); align-items: stretch; }
+.slot { grid-column: span 1; }
+.slot[hidden] { display: none; }
+
+/* ---------- 卡片：老派產品標籤 ---------- */
+.card {
+  position: relative; display: flex; flex-direction: column; height: 100%;
+  text-decoration: none; color: var(--brown);
+  background: var(--cream);
+  border: 3px solid var(--brown); border-radius: 14px;
+  box-shadow: 7px 8px 0 var(--brown);
+  transition: rotate 0.45s var(--boing), translate 0.45s var(--boing), box-shadow 0.25s;
+}
+.card::after { content: ""; position: absolute; z-index: 1; inset: 7px; border: 2px dashed rgba(139, 66, 31, 0.45); border-radius: 9px; pointer-events: none; }
+.card:hover { rotate: -1.8deg; translate: 0 -6px; box-shadow: 10px 12px 0 var(--red); }
+.slot:nth-child(even) .card:hover { rotate: 1.8deg; }
+.band { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; padding: 9px 18px 8px; background: var(--brown); color: var(--cream); border-radius: 10px 10px 0 0; font-weight: 900; font-size: 13.5px; letter-spacing: 0.12em; }
+.band b { font-family: var(--display); font-size: 17px; letter-spacing: 0; color: var(--gold); }
+.pic { display: block; margin: 14px 14px 0; border: 3px solid var(--brown); border-radius: 10px; overflow: hidden; aspect-ratio: 4 / 3; position: relative; }
+.photo { width: 100%; height: 100%; }
+.art {
+  display: grid; place-items: center; width: 100%; height: 100%;
+  background: var(--gold) repeating-linear-gradient(-45deg, transparent 0 14px, rgba(255, 251, 233, 0.45) 14px 22px);
+}
+.slot:nth-child(3n + 2) .art { background-color: var(--mustard); }
+.slot:nth-child(3n) .art { background-color: #f3c75e; }
+.artSvg { width: 58%; max-height: 82%; transition: rotate 0.5s var(--boing), scale 0.5s var(--boing); }
+.card:hover .artSvg { rotate: -8deg; scale: 1.08; }
+.body { display: grid; gap: 6px; padding: 16px 22px 26px; }
+.date { font-size: 18px; color: var(--red); line-height: 1.1; }
+.title { font-size: clamp(21px, 2.1vw, 26px); color: var(--brown); }
+.title small { display: block; font-size: 0.72em; font-weight: 700; color: var(--ink); margin-top: 2px; }
+.sum { font-size: 15px; color: var(--ink); line-height: 1.65; }
+.go {
+  position: absolute; z-index: 2; right: -14px; bottom: -14px; width: 56px; height: 56px;
+  display: grid; place-items: center; border-radius: var(--blob);
+  background: var(--red); color: var(--cream); border: 3px solid var(--brown);
+  font: 900 26px/1 var(--display); transition: rotate 0.5s var(--boing), scale 0.5s var(--boing);
+}
+.card:hover .go { rotate: -20deg; scale: 1.12; }
+
+@media (max-width: 980px) {
+  .grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 600px) {
+  .grid { grid-template-columns: 1fr; }
+  .card { box-shadow: 5px 6px 0 var(--brown); }
+}
