@@ -35,6 +35,8 @@
 .dragon img { display: block; width: 100%; height: auto; animation: float 5s ease-in-out infinite; }
 .cake { right: 0; bottom: 39%; width: 25%; z-index: 3; }
 .school img, .cake svg { display: block; width: 100%; height: auto; }
+/* 校舍的錯位陰影：朱紅色、不模糊，跟蛋糕的套印錯位同方向 */
+.school img { filter: drop-shadow(clamp(3px, 0.65vw, 6px) clamp(3px, 0.55vw, 5px) 0 #E64B2E); }
 @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
 .sp1 { width: 40px; left: 30%; top: 6%; z-index: 4; }
 .sp2 { width: 34px; right: 30%; top: 18%; z-index: 4; }
