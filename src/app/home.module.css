@@ -30,11 +30,11 @@
    舞台比例＝龍的外框 (623.49 : 407.65)；疊放順序：學校 → 龍 → 蛋糕 */
 .stage { position: relative; margin: clamp(10px, 2vw, 20px) auto 0; width: min(920px, 100%); aspect-ratio: 623.49 / 407.65; }
 .stage > * { position: absolute; }
-.school { left: 40.5%; bottom: 36%; width: 33%; z-index: 1; }
+.school { left: 36%; bottom: 42%; width: 37%; z-index: 1; }
 .dragon { inset: 0; z-index: 2; }
 .dragon img { display: block; width: 100%; height: auto; animation: float 5s ease-in-out infinite; }
 .cake { right: 0; bottom: 39%; width: 25%; z-index: 3; }
-.school svg, .cake svg { width: 100%; height: auto; }
+.school img, .cake svg { display: block; width: 100%; height: auto; }
 @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
 .sp1 { width: 40px; left: 30%; top: 6%; z-index: 4; }
 .sp2 { width: 34px; right: 30%; top: 18%; z-index: 4; }

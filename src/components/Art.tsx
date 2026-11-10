@@ -79,22 +79,10 @@ export function DragonLong({ className }: { className?: string }) {
   return <img src="/images/dragon.svg" alt="" className={className} decoding="async" draggable={false} />;
 }
 
-export function School(p: ArtProps) {
-  return (
-    <Art vb="0 0 260 250" {...p}>
-      <path d="M112 60L130 6l18 54z" fill={C} stroke={B} strokeWidth="5" strokeLinejoin="round" />
-      <path d="M121 34h18M116 48h28" stroke={R} strokeWidth="6" strokeLinecap="round" />
-      <path d="M130 2l4 8 9 1-7 6 2 9-8-5-8 5 2-9-7-6 9-1z" fill={G} stroke={B} strokeWidth="3" strokeLinejoin="round" />
-      <path d="M26 106L130 52l104 54z" fill={R} stroke={B} strokeWidth="6" strokeLinejoin="round" />
-      <rect x="40" y="100" width="180" height="130" rx="10" fill={B} />
-      <rect x="32" y="226" width="196" height="12" rx="6" fill={K} />
-      {[60, 110, 160].map((x) => (
-        <path key={x} d={`M${x} 228V192a20 20 0 0 1 40 0V228z`} fill={G} />
-      ))}
-      <path d="M80 228v-32M130 228v-32M180 228v-32" stroke={M} strokeWidth="4" />
-      <Face x={130} y={134} gap={46} />
-    </Art>
-  );
+/** 校舍：svg/school.svg（色號已對到網站色票），放在 public/images/school.svg */
+export function School({ className }: { className?: string }) {
+  // eslint-disable-next-line @next/next/no-img-element
+  return <img src="/images/school.svg" alt="" className={className} decoding="async" draggable={false} />;
 }
 
 // 蛋糕：插畫來自 svg/cake.svg（色號已對到網站色票）；蠟燭沿用原本的，右上角派對帽會晃動（.cake-hat／.cake-pom 在 globals.css）
