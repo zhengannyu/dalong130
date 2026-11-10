@@ -16,7 +16,7 @@
 .tl { position: relative; padding: clamp(60px, 8vw, 110px) 0; }
 .line { position: absolute; left: 50%; top: 60px; bottom: 60px; width: 6px; translate: -50% 0; background: repeating-linear-gradient(var(--brown) 0 10px, transparent 10px 20px); border-radius: 6px; }
 .lineFill { position: absolute; inset: 0; background: var(--red); border-radius: 6px; transform-origin: top; }
-.row { position: relative; display: grid; grid-template-columns: 1fr 70px 1fr; align-items: center; margin-bottom: clamp(30px, 5vw, 60px); }
+.row { position: relative; display: grid; grid-template-columns: minmax(0, 1fr) 70px minmax(0, 1fr); align-items: center; margin-bottom: clamp(30px, 5vw, 60px); }
 .dot { grid-column: 2; grid-row: 1; justify-self: center; width: 26px; height: 26px; border-radius: var(--blob); background: var(--gold); border: 4px solid var(--brown); z-index: 1; }
 .left .yearCol { grid-column: 1; grid-row: 1; text-align: right; justify-items: end; }
 .left .picCol { grid-column: 3; grid-row: 1; }

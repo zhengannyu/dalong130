@@ -17,7 +17,7 @@
 .sched > li { margin-left: var(--l); width: var(--w); min-width: min(250px, calc(100% - var(--l))); }
 .slot { background: var(--cream); border: 3px solid var(--brown); border-radius: 18px; box-shadow: 6px 7px 0 var(--brown); transition: box-shadow 0.2s, translate 0.35s var(--boing); }
 .slot:hover { translate: 0 -3px; box-shadow: 8px 10px 0 var(--red); }
-.slot summary { display: grid; grid-template-columns: 1fr auto; grid-template-areas: "time time" "body body" "place plus"; align-items: center; gap: 6px 12px; padding: 14px 18px 14px; cursor: pointer; list-style: none; }
+.slot summary { display: grid; grid-template-columns: minmax(0, 1fr) auto; grid-template-areas: "time time" "body body" "place plus"; align-items: center; gap: 6px 12px; padding: 14px 18px 14px; cursor: pointer; list-style: none; }
 .slot summary::-webkit-details-marker, .q summary::-webkit-details-marker { display: none; }
 .time { grid-area: time; font-size: clamp(20px, 2vw, 26px); color: var(--red); white-space: nowrap; }
 .time i { font-style: normal; color: var(--brown); margin: 0 4px; }
@@ -29,7 +29,7 @@ details[open] > summary .plus { rotate: 135deg; }
 .slotInfo { padding: 0 18px 16px; color: var(--ink); font-weight: 700; font-size: 15px; line-height: 1.65; }
 .ch { margin-right: 8px; }
 /* 底下的時間軸 */
-.axis { display: grid; grid-template-columns: 1fr 1fr 1fr; margin-top: 0; padding-top: 10px; border-top: 6px solid var(--mustard); color: var(--ink); font-size: 18px; }
+.axis { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr); margin-top: 0; padding-top: 10px; border-top: 6px solid var(--mustard); color: var(--ink); font-size: 18px; }
 .axis span:nth-child(1) { justify-self: start; }
 .axis span:nth-child(2) { justify-self: center; }
 .axis span:nth-child(3) { justify-self: end; }
@@ -43,7 +43,7 @@ details[open] > summary .plus { rotate: 135deg; }
 
 /* 地圖 */
 .mapSec { background: var(--cream-2); padding: clamp(60px, 8vw, 100px) 0; border-block: 3px solid var(--brown); scroll-margin-top: 140px; }
-.mapGrid { display: grid; grid-template-columns: 1.6fr 1fr; gap: clamp(20px, 3vw, 40px); align-items: start; }
+.mapGrid { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); gap: clamp(20px, 3vw, 40px); align-items: start; }
 .mapBox { background: var(--gold); padding: clamp(10px, 2vw, 20px); border: 3px solid var(--brown); border-radius: var(--wonky-2); box-shadow: 8px 9px 0 var(--brown); }
 .map { width: 100%; height: auto; }
 .mapNote { margin-top: 8px; font-size: 13px; font-weight: 900; color: var(--ink); text-align: right; }
@@ -70,7 +70,7 @@ details[open] > summary .plus { rotate: 135deg; }
 /* 交通 */
 .goSec { background: var(--mustard); padding: clamp(40px, 6vw, 70px) 0; scroll-margin-top: 140px; }
 .goSec :global(.eyebrow) { color: var(--brown); }
-.goGrid { display: grid; grid-template-columns: 1.6fr 1fr; gap: clamp(24px, 4vw, 56px); align-items: start; }
+.goGrid { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); gap: clamp(24px, 4vw, 56px); align-items: start; }
 .tabs { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 22px; }
 .tab { padding: 0.5em 1.2em 0.55em; font-weight: 900; font-size: 17px; background: var(--cream); border: 3px solid var(--brown); border-radius: var(--wonky-2); box-shadow: 3px 4px 0 var(--brown); transition: rotate 0.35s var(--boing), background 0.2s, color 0.2s; }
 .tab:hover { rotate: -3deg; }
@@ -100,11 +100,11 @@ details[open] > summary .plus { rotate: 135deg; }
 .q p { padding: 0 24px 20px 66px; color: var(--ink); font-weight: 700; }
 
 @media (max-width: 900px) {
-  .mapGrid, .goGrid { grid-template-columns: 1fr; }
+  .mapGrid, .goGrid { grid-template-columns: minmax(0, 1fr); }
   .addr { margin-top: 0; }
 }
 @media (max-width: 640px) {
-  .slot summary { grid-template-columns: 1fr auto; gap: 10px 12px; }
+  .slot summary { grid-template-columns: minmax(0, 1fr) auto; gap: 10px 12px; }
   .time { grid-column: 1 / -1; border-right: 0; padding: 0; }
   .place { justify-self: start; }
   .q p { padding: 0 18px 18px; }

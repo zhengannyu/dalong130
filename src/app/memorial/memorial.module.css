@@ -23,7 +23,7 @@
 
 /* 祝賀牆 */
 .wallSec { background: var(--gold); padding: clamp(60px, 8vw, 100px) 0; border-block: 3px solid var(--brown); scroll-margin-top: 140px; }
-.wishGrid { display: grid; grid-template-columns: 340px 1fr; gap: clamp(24px, 4vw, 56px); align-items: start; }
+.wishGrid { display: grid; grid-template-columns: 340px minmax(0, 1fr); gap: clamp(24px, 4vw, 56px); align-items: start; }
 .wishForm { display: grid; gap: 14px; padding: 26px 24px 28px; background: var(--cream); border: 3px solid var(--brown); border-radius: var(--wonky-2); box-shadow: 8px 9px 0 var(--brown); }
 .formTitle { font-size: 38px; color: var(--red); font-style: italic; }
 .field { display: grid; gap: 6px; border: 0; }
@@ -46,9 +46,9 @@
 .noteMustard { background: var(--mustard); color: var(--ink); }
 
 @media (max-width: 900px) {
-  .records { grid-template-columns: 1fr 1fr; }
-  .wishGrid { grid-template-columns: 1fr; }
+  .records { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+  .wishGrid { grid-template-columns: minmax(0, 1fr); }
 }
 @media (max-width: 560px) {
-  .records { grid-template-columns: 1fr; }
+  .records { grid-template-columns: minmax(0, 1fr); }
 }

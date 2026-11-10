@@ -109,7 +109,7 @@
 .footer { margin-top: clamp(60px, 8vw, 100px); color: var(--cream); }
 .footWave { margin-bottom: -1px; }
 .footInner { background: var(--brown); padding: clamp(40px, 6vw, 70px) 0 28px; position: relative; overflow: hidden; }
-.footGrid { display: grid; grid-template-columns: 1.5fr repeat(4, 0.7fr) auto; gap: 34px; align-items: start; }
+.footGrid { display: grid; grid-template-columns: minmax(0, 1.5fr) repeat(4, 0.7fr) auto; gap: 34px; align-items: start; }
 .footBrand { display: grid; gap: 10px; }
 .footLogo { width: 170px; margin-bottom: 8px; }
 .footBrand .cjk-heavy, .footBrand :global(.cjk-heavy) { font-size: 20px; color: var(--gold); }
@@ -132,5 +132,5 @@
   .topRing { width: 104px; height: 104px; }
 }
 @media (max-width: 560px) {
-  .footGrid { grid-template-columns: 1fr 1fr; }
+  .footGrid { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
 }
