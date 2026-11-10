@@ -5,6 +5,11 @@ next-env.d.ts
 *.tsbuildinfo
 out.tar.gz
 backup
+*.bak
+*.bak-*
 .DS_Store
 reff/
 refff/
+_to_delete_預覽縮圖2/
+校史上傳資料/
+活動上傳資料/

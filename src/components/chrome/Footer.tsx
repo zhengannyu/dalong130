@@ -3,12 +3,11 @@ import Logotype from "../Logotype";
 import { RingText, Wave } from "../Art";
 import s from "./chrome.module.css";
 
-// 網站地圖：標題與順序跟導覽列一致（大龍校史／活動／紀念／校慶資訊）。
+// 網站地圖：標題與順序跟導覽列一致（大龍校史／活動／校慶資訊）。
 // 「國際交流」在資料裡的分類名稱是「展望」；校友祝賀牆隱藏、回娘家報名已刪除，所以先不列。
 const COLS = [
   { h: "大龍校史", links: [["年表 1896–2026", "/history/"], ["老照片牆", "/history/#album"]] },
   { h: "活動", links: [["慶祝", "/events/?cat=慶祝"], ["傳承", "/events/?cat=傳承"], ["國際交流", "/events/?cat=展望"]] },
-  { h: "紀念", links: [["影像紀事", "/memorial/#records"]] },
   { h: "校慶資訊", links: [["節目表", "/info/#program"], ["交通方式", "/info/#transport"], ["常見問題", "/info/#faq"]] },
 ];
 

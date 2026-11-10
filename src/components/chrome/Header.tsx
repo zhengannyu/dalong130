@@ -6,7 +6,7 @@ import Logotype from "../Logotype";
 import { Star } from "../Art";
 import s from "./chrome.module.css";
 
-// 主選單：大龍校史／活動（下拉：慶祝、傳承、國際交流）／紀念；「校慶資訊」是右側的按鈕
+// 主選單：大龍校史／活動（下拉：慶祝、傳承、國際交流）；「校慶資訊」是右側的按鈕
 // 「國際交流」在資料裡的分類名稱是「展望」，所以連結的 cat 用「展望」
 const NAV: { href: string; label: string; en: string; sub?: { label: string; cat: string }[] }[] = [
   { href: "/history/", label: "大龍校史", en: "History" },
@@ -18,7 +18,6 @@ const NAV: { href: string; label: string; en: string; sub?: { label: string; cat
       { label: "國際交流", cat: "展望" },
     ],
   },
-  { href: "/memorial/", label: "紀念", en: "Memorial" },
 ];
 
 export default function Header() {

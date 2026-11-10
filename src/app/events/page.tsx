@@ -3,7 +3,7 @@ import PageHead from "@/components/PageHead";
 import EventCard from "@/components/EventCard";
 import EventGrid from "@/components/EventGrid";
 import { layoutPos } from "@/lib/layout";
-import { Drum, Cake } from "@/components/Art";
+import { Cake } from "@/components/Art";
 import { ACTS, CATS } from "@/content/site";
 import s from "./events.module.css";
 
@@ -22,7 +22,7 @@ export default function EventsPage() {
         eng="Let’s Celebrate"
         title="校慶系列活動"
         lead={<p>2026 年 2 月到 11 月，活動陸續登場！用慶祝、傳承、展望三種方式，一起迎接大龍的 130 歲。</p>}
-        art={<div className={s.headArt}><Cake className={s.cake} /><Drum className={`${s.drum} wobble`} /></div>}
+        art={<div className={s.headArt}><Cake className={s.cake} /></div>}
       />
       <section className={`wrap ${s.list}`}>
         <EventGrid counts={counts} syncUrl>

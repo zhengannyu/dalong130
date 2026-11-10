@@ -1,4 +1,3 @@
 .list { padding: clamp(20px, 3vw, 40px) 0 clamp(40px, 6vw, 80px); }
 .headArt { position: relative; aspect-ratio: 1 / 0.9; }
-.cake { position: absolute; width: 74%; left: 0; bottom: 0; }
-.drum { position: absolute; width: 50%; right: 0; top: 0; }
+.cake { position: absolute; width: 80%; left: 50%; top: 50%; translate: -50% -50%; }
