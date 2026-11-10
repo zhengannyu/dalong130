@@ -1,0 +1,94 @@
+{
+  "act": {
+    "slug": "artshow",
+    "cat": "慶祝",
+    "t": "展藝飛揚 學習有光",
+    "s": "小小藝術展",
+    "date": "2026 年 3 月至 4 月",
+    "venue": "拱廊藝廊",
+    "host": "藝文領域",
+    "sum": "廊道變成美術館，一整面牆的畫作、海報與拼貼，都是孩子眼中的大龍。",
+    "lead": "走過拱廊的時候，請放慢腳步。",
+    "body": [
+      "小小藝術展把校園廊道變成一座長長的美術館。從拱廊入口開始，一幅幅學生畫作沿著牆面展開，色彩多到讓人捨不得走快。",
+      "展出的作品類型很豐富：有以名畫為靈感的人像創作，有低年級的彩色拼貼，也有用紙袋做成的手偶、黑底刮畫與圖形拼貼。最吸引目光的，是為創校130週年設計的一系列主題作品：把「龍」字畫成圖像、設計大龍國小的龍形標誌，還有「龍躍傳承130 雙語國際啟新程」、「龍耀百三 精彩綻放」等海報，把孩子對學校的祝福畫在紙上。",
+      "整齊排列的圓形與菱形彩繪作品，遠遠看去像一面圖案牆。每件作品下方都標著班級與座號，讓每個孩子都能在牆上找到自己的名字。"
+    ],
+    "q": "一百三十歲的學校，被這麼多不同的顏色重新畫了一次。",
+    "gal": [
+      [
+        "artshow-01",
+        "拱廊牆面成為展場"
+      ],
+      [
+        "artshow-02",
+        "畫作沿著廊道一路展開"
+      ],
+      [
+        "artshow-03",
+        "圓形與菱形的圖案作品整齊排成長牆"
+      ],
+      [
+        "artshow-04",
+        "近看每件作品都有各自的色彩與圖樣"
+      ],
+      [
+        "artshow-05",
+        "以龍與「130」為主題的繪畫創作"
+      ],
+      [
+        "artshow-06",
+        "把「龍」字畫成圖像的創作"
+      ],
+      [
+        "artshow-07",
+        "「大龍國小」龍形標誌設計"
+      ],
+      [
+        "artshow-08",
+        "「龍躍傳承130 雙語國際啟新程」主題海報"
+      ],
+      [
+        "artshow-09",
+        "充滿慶生氣氛的校慶海報"
+      ],
+      [
+        "artshow-10",
+        "「龍耀百三 精彩綻放」佾舞隊主題海報"
+      ],
+      [
+        "artshow-11",
+        "以名畫為靈感的人像創作整面展出"
+      ],
+      [
+        "artshow-12",
+        "低年級的彩色拼貼畫作"
+      ],
+      [
+        "artshow-13",
+        "動物與花卉的拼貼作品"
+      ],
+      [
+        "artshow-14",
+        "紙袋做成的手偶作品"
+      ]
+    ],
+    "img": "artshow-01"
+  },
+  "img": {
+    "artshow-01": "/images/events/artshow/01.webp",
+    "artshow-02": "/images/events/artshow/02.webp",
+    "artshow-03": "/images/events/artshow/03.webp",
+    "artshow-04": "/images/events/artshow/04.webp",
+    "artshow-05": "/images/events/artshow/05.webp",
+    "artshow-06": "/images/events/artshow/06.webp",
+    "artshow-07": "/images/events/artshow/07.webp",
+    "artshow-08": "/images/events/artshow/08.webp",
+    "artshow-09": "/images/events/artshow/09.webp",
+    "artshow-10": "/images/events/artshow/10.webp",
+    "artshow-11": "/images/events/artshow/11.webp",
+    "artshow-12": "/images/events/artshow/12.webp",
+    "artshow-13": "/images/events/artshow/13.webp",
+    "artshow-14": "/images/events/artshow/14.webp"
+  }
+}

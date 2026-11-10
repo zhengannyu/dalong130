@@ -1,0 +1,99 @@
+{
+  "act": {
+    "slug": "showcase",
+    "cat": "慶祝",
+    "t": "展藝飛揚 學習有光",
+    "s": "學生才藝暨社團成果發表會",
+    "date": "2026 年 4 月 25 日",
+    "venue": "活動中心",
+    "host": "教務處・各社團",
+    "img": "showcase-01",
+    "sum": "大鼓開場，芭蕾、跆拳道、街舞與體操輪番登場，孩子在舞台上發光。",
+    "lead": "鼓聲一響，舞台上的每個孩子都成了主角。",
+    "body": [
+      "「龍躍130 展藝飛揚 學習有光」學生社團暨才藝嘉年華會，邀請家長與社區好朋友走進校園，欣賞孩子們多元學習的成果。活動由大龍大鼓隊「活力戰鼓」熱鬧揭幕，一聲聲鼓響，敲出大龍學子的朝氣，也象徵百年學府薪火相傳。",
+      "接著芭蕾舞、熱舞、街舞、跆拳道、扯鈴等節目輪番登場。從低年級可愛活潑的律動，到高年級自信俐落的群舞；體操社的同學藉著彈翻床翻騰而起，跆拳道社的同學在台上疊起人牆、飛身側踢，台下的掌聲一陣接著一陣。",
+      "推廣國際交流的成果中，新加坡交流直笛團在出發前吹奏〈茉莉花〉，讓音樂跨越國界。站在舞台上的每一位孩子，寫下屬於這個世代的大龍故事；台下陪伴的爸爸、媽媽與家人，則是這場嘉年華最溫暖的觀眾。"
+    ],
+    "q": "每一個舞步、每一段旋律，都是孩子努力學習的成果。",
+    "gal": [
+      [
+        "showcase-01",
+        "大鼓隊在體育館中央擺開陣勢，準備開場"
+      ],
+      [
+        "showcase-02",
+        "鼓聲響起，揭開嘉年華序幕"
+      ],
+      [
+        "showcase-03",
+        "芭蕾舞表演，舞者在「龍躍傳承130」前舒展"
+      ],
+      [
+        "showcase-04",
+        "跆拳道社同學側踢破板的瞬間"
+      ],
+      [
+        "showcase-05",
+        "跆拳道社同學在台上疊起人牆"
+      ],
+      [
+        "showcase-06",
+        "低年級小朋友身穿鮮黃衣服登台"
+      ],
+      [
+        "showcase-07",
+        "孩子們在舞台上跳熱舞"
+      ],
+      [
+        "showcase-08",
+        "低年級同學排出可愛的舞蹈隊形"
+      ],
+      [
+        "showcase-09",
+        "體操社同學飛身躍過跳箱"
+      ],
+      [
+        "showcase-10",
+        "藉著彈翻床完成後空翻"
+      ],
+      [
+        "showcase-11",
+        "空中翻轉的一瞬間"
+      ],
+      [
+        "showcase-12",
+        "高年級街舞團身穿黑衣群舞"
+      ],
+      [
+        "showcase-13",
+        "黃衣隊伍同學在舞台上整齊演出"
+      ],
+      [
+        "showcase-14",
+        "芭蕾舞者在舞台上旋轉"
+      ],
+      [
+        "showcase-15",
+        "格子裙舞蹈團的群舞"
+      ]
+    ]
+  },
+  "img": {
+    "showcase-01": "/images/events/showcase/01.webp",
+    "showcase-02": "/images/events/showcase/02.webp",
+    "showcase-03": "/images/events/showcase/03.webp",
+    "showcase-04": "/images/events/showcase/04.webp",
+    "showcase-05": "/images/events/showcase/05.webp",
+    "showcase-06": "/images/events/showcase/06.webp",
+    "showcase-07": "/images/events/showcase/07.webp",
+    "showcase-08": "/images/events/showcase/08.webp",
+    "showcase-09": "/images/events/showcase/09.webp",
+    "showcase-10": "/images/events/showcase/10.webp",
+    "showcase-11": "/images/events/showcase/11.webp",
+    "showcase-12": "/images/events/showcase/12.webp",
+    "showcase-13": "/images/events/showcase/13.webp",
+    "showcase-14": "/images/events/showcase/14.webp",
+    "showcase-15": "/images/events/showcase/15.webp"
+  }
+}

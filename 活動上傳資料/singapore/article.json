@@ -1,0 +1,54 @@
+{
+  "act": {
+    "slug": "singapore",
+    "cat": "展望",
+    "t": "走讀獅城",
+    "s": "南洋風情（新加坡）",
+    "date": "2026 年 5 月",
+    "venue": "新加坡",
+    "host": "雙語教育推動小組",
+    "sum": "穿上團服走進新加坡的學校，孩子在課堂與校園裡體驗不一樣的日常。",
+    "lead": "在多元文化的城市裡，看見不一樣的日常。",
+    "body": [
+      "大龍的孩子穿著橘色與青綠色的團服，走進新加坡的友好學校。他們坐在地板上聽老師說明，也兩兩一組坐在課桌前完成學習任務。",
+      "在學校的體育館裡，當地同學穿著深紅色的制服，與大龍的孩子席地而坐，在牆上「THRIVE」字樣的注視下，進行一場輕鬆的交流活動。除了校園，行程也帶孩子登上摩天觀景艙，從高處眺望這座城市。",
+      "團服上寫著「大龍國小」，孩子手裡拿著當地的資料與紀念品，在學校美食廣場前高高舉起布條合影。出發前，他們才剛在校慶活動的舞台上吹奏〈茉莉花〉；這一趟，換成把大龍的故事帶到南洋。"
+    ],
+    "q": "南洋的風，吹進了大龍的教室。",
+    "gal": [
+      [
+        "singapore-01",
+        "在新加坡的學校，孩子們坐在地板上聽課"
+      ],
+      [
+        "singapore-02",
+        "兩人一組在課桌前完成學習任務"
+      ],
+      [
+        "singapore-03",
+        "登上摩天觀景艙，眺望新加坡"
+      ],
+      [
+        "singapore-04",
+        "交流團在學校美食廣場前高舉布條合影"
+      ],
+      [
+        "singapore-05",
+        "與當地同學席地進行交流活動"
+      ],
+      [
+        "singapore-06",
+        "在體育館牆面「THRIVE」前，與當地同學圍坐分享"
+      ]
+    ],
+    "img": "singapore-04"
+  },
+  "img": {
+    "singapore-01": "/images/events/singapore/01.webp",
+    "singapore-02": "/images/events/singapore/02.webp",
+    "singapore-03": "/images/events/singapore/03.webp",
+    "singapore-04": "/images/events/singapore/04.webp",
+    "singapore-05": "/images/events/singapore/05.webp",
+    "singapore-06": "/images/events/singapore/06.webp"
+  }
+}

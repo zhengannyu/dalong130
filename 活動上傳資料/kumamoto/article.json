@@ -1,0 +1,99 @@
+{
+  "act": {
+    "slug": "kumamoto",
+    "cat": "展望",
+    "t": "熊本高平台小學",
+    "s": "美術交流",
+    "date": "2025 年 12 月至 2026 年 4 月",
+    "venue": "大龍國小・拱廊藝廊",
+    "host": "藝文領域",
+    "img": "kumamoto-14",
+    "sum": "兩校孩子隔著海互寄作品：一邊刻馬年賀年卡，一邊拆開來自台灣的版畫。",
+    "lead": "不需要翻譯，畫就能說話。",
+    "body": [
+      "大龍國小與日本熊本市高平台小學展開兒童作品交流。熊本孩子寄來的賀年作品，被佈置在大龍的走廊上，低年級的小朋友一群群圍上來，湊近展板，看海的另一邊、同年紀的朋友畫了什麼。",
+      "大龍的孩子也沒有閒著。教室裡擺滿刻刀與色紙，中高年級的同學為馬年賀年卡設計圖樣、一刀一刀刻版、再蓋上彩色印泥；完成的卡片拼在一起，成了一面可愛的馬年圖案牆。另一批版畫作品以魚、貓熊、高塔與牌坊為題，色彩濃烈。",
+      "作品漂洋過海後，熊本的孩子拆開包裝，彎身細看每一幅版畫，師生之間也遞交了作品。同學們捧著畫與大龍作品合影，還在教室裡動手做起回禮的賀年卡。隔著一片海，兩所學校用畫筆互相說了一次新年快樂。"
+    ],
+    "q": "隔著一片海，我們畫了同一個太陽。",
+    "gal": [
+      [
+        "kumamoto-01",
+        "走廊成為展場，同學們貼近展板欣賞熊本孩子的賀年作品"
+      ],
+      [
+        "kumamoto-02",
+        "老師帶著小朋友閱讀作品旁的說明牌"
+      ],
+      [
+        "kumamoto-03",
+        "一整排作品吸引小朋友圍觀"
+      ],
+      [
+        "kumamoto-04",
+        "貓熊在黃色竹林中，版畫色彩濃烈"
+      ],
+      [
+        "kumamoto-05",
+        "以魚為題的彩色版畫"
+      ],
+      [
+        "kumamoto-06",
+        "以高塔與雲朵為題的版畫作品"
+      ],
+      [
+        "kumamoto-07",
+        "以牌坊與彩虹為題的版畫作品"
+      ],
+      [
+        "kumamoto-08",
+        "大龍同學上版畫課，桌上擺滿刻刀與色紙"
+      ],
+      [
+        "kumamoto-09",
+        "分組桌前，孩子們專心刻版"
+      ],
+      [
+        "kumamoto-10",
+        "完成的馬年賀年卡版畫拼成一面圖案牆"
+      ],
+      [
+        "kumamoto-11",
+        "手持完成的馬年賀年卡成品"
+      ],
+      [
+        "kumamoto-12",
+        "熊本的孩子拆開來自大龍的版畫，細細欣賞"
+      ],
+      [
+        "kumamoto-13",
+        "熊本師生接過來自台灣的作品"
+      ],
+      [
+        "kumamoto-14",
+        "熊本同學捧著作品，與大龍的版畫合影"
+      ],
+      [
+        "kumamoto-15",
+        "高平台小學的教室裡，孩子們動手做賀年卡"
+      ]
+    ]
+  },
+  "img": {
+    "kumamoto-01": "/images/events/kumamoto/01.webp",
+    "kumamoto-02": "/images/events/kumamoto/02.webp",
+    "kumamoto-03": "/images/events/kumamoto/03.webp",
+    "kumamoto-04": "/images/events/kumamoto/04.webp",
+    "kumamoto-05": "/images/events/kumamoto/05.webp",
+    "kumamoto-06": "/images/events/kumamoto/06.webp",
+    "kumamoto-07": "/images/events/kumamoto/07.webp",
+    "kumamoto-08": "/images/events/kumamoto/08.webp",
+    "kumamoto-09": "/images/events/kumamoto/09.webp",
+    "kumamoto-10": "/images/events/kumamoto/10.webp",
+    "kumamoto-11": "/images/events/kumamoto/11.webp",
+    "kumamoto-12": "/images/events/kumamoto/12.webp",
+    "kumamoto-13": "/images/events/kumamoto/13.webp",
+    "kumamoto-14": "/images/events/kumamoto/14.webp",
+    "kumamoto-15": "/images/events/kumamoto/15.webp"
+  }
+}

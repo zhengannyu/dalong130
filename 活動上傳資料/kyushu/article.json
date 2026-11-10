@@ -1,0 +1,94 @@
+{
+  "act": {
+    "slug": "kyushu",
+    "cat": "展望",
+    "t": "走讀九州",
+    "s": "文化見學（日本）",
+    "date": "2025 年 5 月至 6 月",
+    "venue": "日本九州",
+    "host": "雙語教育推動小組",
+    "img": "kyushu-06",
+    "sum": "走進九州的小學與街頭，孩子在課堂、午餐與表演裡認識日本，也介紹自己的家鄉。",
+    "lead": "雙語課程的下一站，是走出教室。",
+    "body": [
+      "出發之前，孩子們先在教室裡用簡報與平板準備要分享的內容。到了九州，他們走進天草栖本小學，體育館裡掛著「歡迎大家蒞臨天草栖本小學」的布條，大龍的孩子在舞台上吹奏直笛，穿上黃色佾生服的同學則向日本師生介紹家鄉的文化。",
+      "接著是真正的「一起生活」：大家和日本同學一起坐進教室、吃營養午餐，看日本同學穿上白帽與圍裙分餐；也在桌上一起摺紙，兩校代表互贈紀念品，最後在體育館與全校師生拍下大合照。",
+      "課堂之外，行程也走進城市：在博多車站拿著交通卡搭乘電車、對照地圖找路，走訪神社、在城跡石垣與盛開的花叢前留影。回國之後，這些旅程成為孩子們最好的分享題材。"
+    ],
+    "q": "世界很大，但第一步，是敢開口說話。",
+    "gal": [
+      [
+        "kyushu-01",
+        "出發前，在教室裡準備交流內容"
+      ],
+      [
+        "kyushu-02",
+        "和日本同學一起享用校園午餐"
+      ],
+      [
+        "kyushu-03",
+        "在日本學校的校園裡與同學合影"
+      ],
+      [
+        "kyushu-04",
+        "日本同學穿著白帽白圍裙，與大龍孩子一起吃營養午餐"
+      ],
+      [
+        "kyushu-05",
+        "坐進日本的教室，體驗他們的一堂課"
+      ],
+      [
+        "kyushu-06",
+        "在「歡迎大家蒞臨天草栖本小學」布條前，大龍孩子吹奏直笛"
+      ],
+      [
+        "kyushu-07",
+        "兩校代表互贈紀念品"
+      ],
+      [
+        "kyushu-08",
+        "大龍孩子穿上佾生服，向日本師生介紹家鄉文化"
+      ],
+      [
+        "kyushu-09",
+        "一起摺紙，桌上是紅色的摺紙作品"
+      ],
+      [
+        "kyushu-10",
+        "在博多車站前，孩子們戴著名牌合影"
+      ],
+      [
+        "kyushu-11",
+        "手握交通卡，準備搭乘電車"
+      ],
+      [
+        "kyushu-12",
+        "與日本師生在體育館的大合照"
+      ],
+      [
+        "kyushu-13",
+        "城跡石垣與盛開的花叢前留影"
+      ],
+      [
+        "kyushu-14",
+        "走訪神社，在手水舍前體驗洗手淨身的禮儀"
+      ]
+    ]
+  },
+  "img": {
+    "kyushu-01": "/images/events/kyushu/01.webp",
+    "kyushu-02": "/images/events/kyushu/02.webp",
+    "kyushu-03": "/images/events/kyushu/03.webp",
+    "kyushu-04": "/images/events/kyushu/04.webp",
+    "kyushu-05": "/images/events/kyushu/05.webp",
+    "kyushu-06": "/images/events/kyushu/06.webp",
+    "kyushu-07": "/images/events/kyushu/07.webp",
+    "kyushu-08": "/images/events/kyushu/08.webp",
+    "kyushu-09": "/images/events/kyushu/09.webp",
+    "kyushu-10": "/images/events/kyushu/10.webp",
+    "kyushu-11": "/images/events/kyushu/11.webp",
+    "kyushu-12": "/images/events/kyushu/12.webp",
+    "kyushu-13": "/images/events/kyushu/13.webp",
+    "kyushu-14": "/images/events/kyushu/14.webp"
+  }
+}
