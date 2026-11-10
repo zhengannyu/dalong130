@@ -183,9 +183,8 @@ export default function Home() {
           </h2>
           <div className={s.badges}>
             {[
-              { href: "/memorial/#records", ring: "RECORDS • 影像紀事 • SINCE 1896 • ", A: Book, t: "影像紀事", d: "翻閱一百三十年" },
+              { href: "/history/", ring: "RECORDS • 影像紀事 • SINCE 1896 • ", A: Book, t: "影像紀事", d: "翻閱一百三十年" },
               { href: "/memorial/#wall", ring: "WISHES • 校友祝賀牆 • HAPPY 130 • ", A: Flower, t: "校友祝賀牆", d: "寫一句話給母校" },
-              { href: "/memorial/#signup", ring: "HOMECOMING • 回娘家 • WELCOME • ", A: Envelope, t: "回娘家報名", d: "11/14・11/21" },
             ].map(({ href, ring, A, t, d }, i) => (
               <Link key={href} href={href} className={s.badgeLink} data-reveal="pop" data-delay={String(i * 0.1)}>
                 <RingText text={ring} className={s.badge} color="#FFFBE9">

@@ -101,7 +101,7 @@
 .memorial { background: var(--red); color: var(--cream); padding: clamp(60px, 8vw, 110px) 0; border-block: 3px solid var(--brown); }
 .memoTitle { text-align: center; font-size: clamp(32px, 5vw, 64px); }
 .memoTitle :global(.display) { color: var(--gold); padding: 0 0.12em; }
-.badges { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(20px, 4vw, 60px); margin-top: clamp(36px, 5vw, 60px); }
+.badges { display: grid; grid-template-columns: repeat(2, 1fr); max-width: 760px; margin-inline: auto; gap: clamp(20px, 4vw, 60px); margin-top: clamp(36px, 5vw, 60px); }
 .badgeLink { display: grid; justify-items: center; gap: 6px; text-align: center; text-decoration: none; transition: translate 0.4s var(--boing); }
 .badgeLink:hover { translate: 0 -8px; }
 .badge { width: clamp(180px, 22vw, 250px); aspect-ratio: 1; }
