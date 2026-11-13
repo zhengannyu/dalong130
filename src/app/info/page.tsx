@@ -4,7 +4,7 @@ import PageHead from "@/components/PageHead";
 import CampusMap from "@/components/CampusMap";
 import TransportTabs from "@/components/TransportTabs";
 import { DragonLong, Star, Wave } from "@/components/Art";
-import { SCHED, ZONES, TRANSPORT, FAQ } from "@/content/site";
+import { SCHED, PERF, ZONES, TRANSPORT, FAQ, type Slot } from "@/content/site";
 import s from "./info.module.css";
 
 export const metadata: Metadata = {
@@ -20,6 +20,21 @@ const toH = (t: string) => {
   const [h, m] = t.split(":").map(Number);
   return h + m / 60;
 };
+
+const slotHead = (x: Slot) => (
+  <>
+    <span className={`${s.time} display`}>
+      {x.a}
+      <i>–</i>
+      {x.b}
+    </span>
+    <span className={s.slotBody}>
+      <b className="cjk-heavy">{x.n}</b>
+      {x.sub && <small>{x.sub}</small>}
+    </span>
+    <span className={`chip ${s.place}`}>{x.pl}</span>
+  </>
+);
 
 export default function InfoPage() {
   return (
@@ -54,26 +69,37 @@ export default function InfoPage() {
               w = (toH(x.b) - toH(x.a)) / (T1 - T0);
             return (
               <li key={x.n} data-reveal="up" data-flat style={{ "--l": `${l * 100}%`, "--w": `${w * 100}%` } as CSSProperties}>
-                <details className={s.slot}>
-                  <summary>
-                    <span className={`${s.time} display`}>
-                      {x.a}
-                      <i>–</i>
-                      {x.b}
-                    </span>
-                    <span className={s.slotBody}>
-                      <b className="cjk-heavy">{x.n}</b>
-                    </span>
-                    <span className={`chip ${s.place}`}>{x.pl}</span>
+                {x.href ? (
+                  <a className={`${s.slot} ${s.slotLink}`} href={x.href}>
+                    <span className={s.slotHead}>{slotHead(x)}</span>
                     <span className={s.plus} aria-hidden="true">
-                      +
+                      ↓
                     </span>
-                  </summary>
-                  <p className={s.slotInfo}>
-                    {x.ch && <em className={`chip chip--慶祝 ${s.ch}`}>{x.ch}</em>}
-                    {x.info}
-                  </p>
-                </details>
+                    <span className={s.slotHint}>查看 {PERF.length} 項節目詳情</span>
+                  </a>
+                ) : (
+                  <details className={s.slot}>
+                    <summary>
+                      {slotHead(x)}
+                      <span className={s.plus} aria-hidden="true">
+                        +
+                      </span>
+                    </summary>
+                    {x.steps && (
+                      <ol className={s.steps2}>
+                        {x.steps.map((st) => (
+                          <li key={st}>{st}</li>
+                        ))}
+                      </ol>
+                    )}
+                    {x.info && (
+                      <p className={s.slotInfo}>
+                        {x.ch && <em className={`chip chip--慶祝 ${s.ch}`}>{x.ch}</em>}
+                        {x.info}
+                      </p>
+                    )}
+                  </details>
+                )}
               </li>
             );
           })}
@@ -83,6 +109,24 @@ export default function InfoPage() {
           <span>12:00</span>
           <span>16:00</span>
         </p>
+
+        <div id="perf" className={s.perf} data-reveal="up">
+          <h3 className="cjk-heavy">表演暨競賽活動　<span className="display">09:40–12:00</span></h3>
+          <ol>
+            {PERF.map(([n, name, kind, who, coach]) => (
+              <li key={n}>
+                <span className={`${s.perfNo} display`}>{n}</span>
+                <b>{name}</b>
+                <span className={s.perfMeta}>
+                  {kind}・{who}・{coach}
+                </span>
+              </li>
+            ))}
+          </ol>
+          <a className={s.perfBack} href="#program">
+            ↑ 回到時間軸
+          </a>
+        </div>
       </section>
 
       <Wave color="var(--mustard)" />

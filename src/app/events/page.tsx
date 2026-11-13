@@ -9,7 +9,7 @@ import s from "./events.module.css";
 
 export const metadata: Metadata = {
   title: "校慶活動",
-  description: "大龍國小 130 週年校慶系列活動：慶祝、傳承、展望共 13 項活動。",
+  description: "大龍國小 130 週年校慶系列活動：慶祝、傳承、展望共 14 項活動。",
 };
 
 export default function EventsPage() {

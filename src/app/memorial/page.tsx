@@ -33,11 +33,11 @@ export default function MemorialPage() {
         <h2 id="rec-title" className={`${s.h2} cjk-heavy`} data-reveal="up">影像紀事</h2>
         <div className={s.records}>
           <Link href="/history/" className={s.rec} data-reveal="up" data-flat>
-            <PrintPhoto src={img(OLD[9])!} alt="" className={s.recPic} />
+            <PrintPhoto src={img("h10")!} alt="" className={s.recPic} />
             <span className={s.recBody}><b className="display">No.01</b><strong className="cjk-heavy">大龍校史</strong><span>1896–2026 年表與 {OLD.length} 張老照片。</span></span>
           </Link>
           <Link href="/history/#album" className={s.rec} data-reveal="up" data-flat data-delay="0.1">
-            <PrintPhoto src={img(OLD[7])!} alt="" className={s.recPic} />
+            <PrintPhoto src={img("h08")!} alt="" className={s.recPic} />
             <span className={s.recBody}><b className="display">No.02</b><strong className="cjk-heavy">老照片牆</strong><span>操場、教室、校門口——那些年的我們都在這裡。</span></span>
           </Link>
           <div className={`${s.rec} ${s.soon}`} data-reveal="up" data-flat data-delay="0.2">

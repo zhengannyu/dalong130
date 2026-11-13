@@ -6,7 +6,8 @@ export type Act = {
   slug: string; cat: Cat; t: string; s: string; date: string; venue: string; host: string;
   img?: string; sum: string; lead: string; body: string[]; q: string; gal: [string, string][];
 };
-export type Slot = { a: string; b: string; ch: string; n: string; pl: string; info: string };
+export type Slot = { a: string; b: string; ch: string; n: string; sub?: string; pl: string; info: string; steps?: string[]; href?: string };
+export type Perf = [number, string, string, string, string]; // 順序、節目名稱、項目、表演者、指導者
 export type Zone = { n: string; d: string; c: string[] };
 export type Route = { l: string; t: string; eta: string; s: [string, string][] };
 
@@ -16,6 +17,7 @@ export const TL_PIC = raw.TL_PIC as unknown as string[];
 export const ACTS = raw.ACTS as unknown as Act[];
 export const FEATURED = raw.FEATURED as unknown as string[];
 export const SCHED = raw.SCHED as unknown as Slot[];
+export const PERF = raw.PERF as unknown as Perf[];
 export const ZONES = raw.ZONES as unknown as Record<string, Zone>;
 export const TRANSPORT = raw.TRANSPORT as unknown as Record<string, Route>;
 export const FAQ = raw.FAQ as unknown as [string, string][];

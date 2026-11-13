@@ -412,7 +412,7 @@ export function Wave({ color = M, className, flip = false }: { color?: string; c
 
 /** 依活動挑插畫（沒有照片時用） */
 const BY_SLUG: Record<string, (p: ArtProps) => ReactNode> = {
-  painting: Pencil, swim: Sun, artshow: Flower, concert: Drum, dance: Dragon, singapore: Globe,
+  "workshop-lantern": Pencil, "workshop-future": Pencil, swim: Sun, artshow: Flower, concert: Drum, dance: Dragon, singapore: Globe,
 };
 export function ActArt({ slug, cat, className }: { slug: string; cat: string; className?: string }) {
   const Cmp = BY_SLUG[slug] ?? (cat === "慶祝" ? Cake : cat === "傳承" ? Book : Globe);

@@ -47,12 +47,25 @@ export default function HistoryPage() {
                 <span className={`${s.year} display ${now ? "" : "distress"}`}>{y}</span>
                 <span className={s.era}>{era(y)}</span>
                 <h2 className={`${s.what} cjk-heavy`}>{t}</h2>
-                {d && <p className={s.desc}>{d}</p>}
+                {d && (() => {
+                  // 說明文字含換行時：第一行是一句話，其餘每行是一個條列項目
+                  const [head, ...items] = d.split("\n");
+                  return (
+                    <>
+                      <p className={s.desc}>{head}</p>
+                      {items.length > 0 && (
+                        <ul className={s.descList}>
+                          {items.map((it) => <li key={it}>{it}</li>)}
+                        </ul>
+                      )}
+                    </>
+                  );
+                })()}
               </div>
               <span className={s.dot} aria-hidden="true" />
               {(now || TL_PIC[i]) && (
                 <div className={s.picCol} data-reveal="stamp" data-rot={String(i % 2 ? -3 : 3)}>
-                  {now ? (
+                  {now && !TL_PIC[i] ? (
                     <Burst className={s.burst} color="#E64B2E">
                       <b className="display">130</b>
                       <span className="cjk-heavy">生日快樂</span>

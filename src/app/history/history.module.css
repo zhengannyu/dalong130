@@ -25,6 +25,8 @@
 .era { display: inline-block; width: fit-content; font-weight: 900; font-size: 13px; letter-spacing: 0.12em; padding: 2px 10px; border: 2.5px solid var(--brown); border-radius: 999px; background: var(--cream); }
 .what { font-size: clamp(20px, 2.2vw, 28px); color: var(--brown); margin-top: 6px; text-wrap: balance; }
 .desc { font-size: 15.5px; color: var(--ink); max-width: 30em; }
+.descList { font-size: 15.5px; color: var(--ink); max-width: 30em; padding-left: 1.3em; margin-top: 4px; display: grid; gap: 4px; }
+.left .descList { text-align: left; justify-self: end; } /* 靠右那一側時整個清單靠右，但條列文字維持靠左好讀 */
 .picCol { width: min(340px, 100%); }
 .pic { display: block; width: 100%; aspect-ratio: 4 / 3; border: 8px solid var(--cream); outline: 3px solid var(--brown); box-shadow: 7px 8px 0 var(--brown); border-radius: 4px; transition: rotate 0.4s var(--boing), scale 0.4s var(--boing); }
 .pic:hover { rotate: 2deg; scale: 1.05; }
@@ -69,6 +71,7 @@
   .row { grid-template-columns: 44px minmax(0, 1fr); gap: 0 14px; }
   .dot { grid-column: 1; grid-row: 1; align-self: start; margin-top: 30px; }
   .left .yearCol, .right .yearCol { grid-column: 2; grid-row: 1; text-align: left; justify-items: start; }
+  .left .descList { justify-self: start; }
   .year { margin-top: 40px; }
   .left .picCol, .right .picCol { grid-column: 2; grid-row: 2; justify-self: start; margin-top: 14px; width: min(280px, 100%); }
   .albumStar, .albumSquig { display: none; }
