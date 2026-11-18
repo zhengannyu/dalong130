@@ -4,12 +4,12 @@ import PageHead from "@/components/PageHead";
 import CampusMap from "@/components/CampusMap";
 import TransportTabs from "@/components/TransportTabs";
 import { DragonLong, Star, Wave } from "@/components/Art";
-import { SCHED, PERF, ZONES, TRANSPORT, FAQ, type Slot } from "@/content/site";
+import { SCHED, PERF, ZONES, TRANSPORT, type Slot } from "@/content/site";
 import s from "./info.module.css";
 
 export const metadata: Metadata = {
   title: "典禮資訊",
-  description: "115 年 11 月 21 日（六）大龍國小 130 週年校慶典禮：節目表、會場地圖、交通方式與常見問題。",
+  description: "115 年 11 月 21 日（六）大龍國小 130 週年校慶典禮：節目表、會場地圖與交通方式。",
 };
 
 // 節目表時間軸的起訖（小時）
@@ -49,8 +49,7 @@ export default function InfoPage() {
       />
       <nav className={`wrap ${s.subnav}`} aria-label="典禮資訊分區">
         <a href="#program">節目表</a>
-        <a href="#transport">交通方式</a>
-        <a href="#faq">常見問題</a>
+        {/* <a href="#transport">交通方式</a> */}
       </nav>
 
       <section id="program" className={`wrap ${s.sec}`} aria-labelledby="prog-title">
@@ -129,6 +128,7 @@ export default function InfoPage() {
         </div>
       </section>
 
+      {/* 暫時隱藏：「怎麼來」交通區塊（含前後波浪分隔），要恢復時拿掉這組註解即可
       <Wave color="var(--mustard)" />
       <section id="transport" className={s.goSec} aria-labelledby="go-title">
         <div className={`wrap ${s.goGrid}`}>
@@ -161,29 +161,7 @@ export default function InfoPage() {
         </div>
       </section>
       <Wave color="var(--mustard)" flip />
-
-      <section id="faq" className={`wrap ${s.sec} ${s.faqSec}`} aria-labelledby="faq-title">
-        <p className="eyebrow" data-reveal="up">
-          FAQ
-        </p>
-        <h2 id="faq-title" className={`${s.h2} cjk-heavy`} data-reveal="up">
-          常見問題
-        </h2>
-        <div className={s.faq}>
-          {FAQ.map(([q, a], i) => (
-            <details key={q} className={s.q} data-reveal="up">
-              <summary>
-                <span className={`${s.qn} display`}>{String(i + 1).padStart(2, "0")}</span>
-                <b className="cjk-heavy">{q}</b>
-                <span className={s.plus} aria-hidden="true">
-                  +
-                </span>
-              </summary>
-              <p>{a}</p>
-            </details>
-          ))}
-        </div>
-      </section>
+      */}
     </>
   );
 }
