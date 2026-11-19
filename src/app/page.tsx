@@ -1,7 +1,6 @@
 import Link from "next/link";
 import Logotype from "@/components/Logotype";
 import { DragonLong, School, Cake, Flower, Book, Drum, Envelope, Ticket, Star, Sparkle, Squiggle, Arrow, TornPanel, RingText, Burst, Wave } from "@/components/Art";
-import Countdown from "@/components/Countdown";
 import Marquee from "@/components/Marquee";
 import PrintPhoto from "@/components/PrintPhoto";
 import EventCard from "@/components/EventCard";
@@ -76,7 +75,7 @@ export default function Home() {
             {[
               { href: "/history/", A: Book, t: "校史年表", d: "1896 → 2026" },
               { href: "/events/", A: Drum, t: "系列活動", d: `${ACTS.length} 場一起玩` },
-              { href: "/memorial/#signup", A: Envelope, t: "校友回娘家", d: "11/14 校友茶會" },
+              { href: "/events/classroom/", A: Envelope, t: "校友回娘家", d: "11/14 校友茶會" },
               { href: "/info/", A: Ticket, t: "典禮資訊", d: "節目・地圖・交通" },
             ].map(({ href, A, t, d }, i) => (
               <Link key={href} href={href} className={s.icon} data-reveal="up" data-delay={String(i * 0.08)}>
@@ -86,10 +85,6 @@ export default function Home() {
               </Link>
             ))}
           </nav>
-
-          <div className={s.cdWrap} data-reveal="up">
-            <Countdown />
-          </div>
         </div>
       </section>
 
