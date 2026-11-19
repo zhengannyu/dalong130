@@ -23,6 +23,8 @@ export default function EventGrid({ children, counts, limit, syncUrl = false }: 
       setCat(q && (CATS as string[]).includes(q) ? q : "全部");
     };
     read();
+    // 從導覽列（別的頁面）點進來會帶 #list：卡片排好之後，直接捲到列表
+    if (location.hash === "#list") requestAnimationFrame(() => document.getElementById("list")?.scrollIntoView({ block: "start" }));
     addEventListener("popstate", read);
     addEventListener("events-cat", read);
     return () => {
@@ -52,7 +54,7 @@ export default function EventGrid({ children, counts, limit, syncUrl = false }: 
       gsap.fromTo(vis, { opacity: 0, y: 30, scale: 0.94 }, { opacity: 1, y: 0, scale: 1, duration: 0.6, ease: "back.out(1.8)", stagger: 0.06, overwrite: true });
     }
     first.current = false;
-    if (syncUrl) history.replaceState(null, "", cat === "全部" ? location.pathname : `${location.pathname}?cat=${encodeURIComponent(cat)}`);
+    if (syncUrl) history.replaceState(null, "", (cat === "全部" ? location.pathname : `${location.pathname}?cat=${encodeURIComponent(cat)}`) + location.hash);
   }, [cat, limit, syncUrl]);
 
   return (

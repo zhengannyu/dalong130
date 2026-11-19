@@ -38,13 +38,14 @@ export default function Header() {
 
   const isOn = (href: string) => path.startsWith(href);
 
-  // 已經在活動頁時，不重新載入頁面，直接通知活動列表切換分類
+  // 已經在活動頁時，不重新載入頁面，直接通知活動列表切換分類，並捲到卡片列表（#list）
   const pickCat = (e: React.MouseEvent, cat: string) => {
     setOpen(false);
     if (path !== "/events/" && path !== "/events") return;
     e.preventDefault();
-    history.pushState(null, "", `/events/?cat=${encodeURIComponent(cat)}`);
+    history.pushState(null, "", `/events/?cat=${encodeURIComponent(cat)}#list`);
     window.dispatchEvent(new Event("events-cat"));
+    document.getElementById("list")?.scrollIntoView({ block: "start" });
   };
 
   return (
@@ -68,7 +69,7 @@ export default function Header() {
                 <ul className={s.sub} aria-label={`${n.label}分類`}>
                   {n.sub.map((c) => (
                     <li key={c.cat}>
-                      <Link href={`/events/?cat=${encodeURIComponent(c.cat)}`} onClick={(e) => pickCat(e, c.cat)}>
+                      <Link href={`/events/?cat=${encodeURIComponent(c.cat)}#list`} onClick={(e) => pickCat(e, c.cat)}>
                         <span>{c.label}</span>
                       </Link>
                     </li>

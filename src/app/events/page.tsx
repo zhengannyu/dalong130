@@ -24,7 +24,7 @@ export default function EventsPage() {
         lead={<p>2026 年 2 月到 11 月，活動陸續登場！用慶祝、傳承、展望三種方式，一起迎接大龍的 130 歲。</p>}
         art={<div className={s.headArt}><Cake className={s.cake} /></div>}
       />
-      <section className={`wrap ${s.list}`}>
+      <section id="list" className={`wrap ${s.list}`}>
         <EventGrid counts={counts} syncUrl>
           {ACTS.map((a, n) => <EventCard key={a.slug} a={a} n={n} pos={layoutPos(n, ACTS.length)} />)}
         </EventGrid>

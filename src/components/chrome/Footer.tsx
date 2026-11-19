@@ -7,7 +7,7 @@ import s from "./chrome.module.css";
 // 「國際交流」在資料裡的分類名稱是「展望」；校友祝賀牆隱藏、回娘家報名已刪除，所以先不列。
 const COLS = [
   { h: "大龍校史", links: [["年表 1896–2026", "/history/"], ["老照片牆", "/history/#album"]] },
-  { h: "活動", links: [["慶祝", "/events/?cat=慶祝"], ["傳承", "/events/?cat=傳承"], ["國際交流", "/events/?cat=展望"]] },
+  { h: "活動", links: [["慶祝", "/events/?cat=慶祝#list"], ["傳承", "/events/?cat=傳承#list"], ["國際交流", "/events/?cat=展望#list"]] },
   { h: "校慶資訊", links: [["節目表", "/info/#program"] /* , ["交通方式", "/info/#transport"] */] },
 ];
 
