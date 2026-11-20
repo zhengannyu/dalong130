@@ -85,7 +85,7 @@ export default async function EventPage({ params }: Params) {
             <div className={s.sheet} data-lb-group>
               {a.gal.map(([k, c], n) => (
                 <figure key={k + n} className={s.frame} data-reveal="up" data-flat>
-                  <PrintPhoto src={img(k)!} alt={c} lb cap={c} className={s.framePhoto} />
+                  <PrintPhoto src={img(k)!} alt={c} lb live={false} cap={c} className={s.framePhoto} />
                   <figcaption>{c}</figcaption>
                 </figure>
               ))}

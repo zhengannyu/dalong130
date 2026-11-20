@@ -11,7 +11,9 @@ import s from "./chrome.module.css";
 const NAV: { href: string; label: string; en: string; sub?: { label: string; cat: string }[] }[] = [
   { href: "/history/", label: "大龍校史", en: "History" },
   {
-    href: "/events/", label: "活動", en: "Events",
+    href: "/events/",
+    label: "活動",
+    en: "Events",
     sub: [
       { label: "慶祝", cat: "慶祝" },
       { label: "傳承", cat: "傳承" },
@@ -53,7 +55,7 @@ export default function Header() {
       <Link href="/" className={s.brand} aria-label="大龍國小 130 週年校慶 首頁">
         <Logotype crop="mark" className={s.mark} />
         <span className={s.brandTxt}>
-          <b>大龍國小</b>
+          <b>臺北市大同區大龍國民小學</b>
           <i className="script">since 1896</i>
         </span>
       </Link>
@@ -61,7 +63,12 @@ export default function Header() {
         <ul>
           {NAV.map((n) => (
             <li key={n.href} className={n.sub ? s.hasSub : undefined}>
-              <Link href={n.href} className={isOn(n.href) ? s.on : undefined} aria-current={isOn(n.href) ? "page" : undefined} aria-haspopup={n.sub ? "true" : undefined}>
+              <Link
+                href={n.href}
+                className={isOn(n.href) ? s.on : undefined}
+                aria-current={isOn(n.href) ? "page" : undefined}
+                aria-haspopup={n.sub ? "true" : undefined}
+              >
                 <span>{n.label}</span>
                 <em className="script">{n.en}</em>
               </Link>
@@ -79,13 +86,17 @@ export default function Header() {
             </li>
           ))}
           <li className={s.navCta}>
-            <Link href="/info/" className="btn btn--sm">校慶資訊 <span className="arrow">→</span></Link>
+            <Link href="/info/" className="btn btn--sm">
+              校慶資訊 <span className="arrow">→</span>
+            </Link>
           </li>
         </ul>
         <Star className={`${s.menuStar} wobble`} color="#E64B2E" />
       </nav>
       <button className={s.burger} aria-expanded={open} aria-controls="main-nav" aria-label={open ? "關閉選單" : "開啟選單"} onClick={() => setOpen((v) => !v)}>
-        <span /><span /><span />
+        <span />
+        <span />
+        <span />
       </button>
     </header>
   );

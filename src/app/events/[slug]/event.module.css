@@ -34,9 +34,8 @@
 .photos > :global(.wrap) { width: min(740px, 100% - var(--gut) * 2); }
 .photosTitle { font-size: clamp(32px, 4.4vw, 56px); color: var(--brown); margin-bottom: clamp(30px, 4vw, 50px); }
 .sheet { display: grid; grid-template-columns: minmax(0, 1fr); gap: clamp(28px, 4vw, 44px); }
-.framePhoto { display: block; width: 100%; border: 9px solid var(--cream); outline: 3px solid var(--brown); border-radius: 4px; box-shadow: 7px 8px 0 var(--brown); cursor: zoom-in; transition: rotate 0.4s var(--boing), scale 0.4s var(--boing); }
+.framePhoto { display: block; width: 100%; border: 9px solid var(--cream); outline: 3px solid var(--brown); border-radius: 4px; box-shadow: 7px 8px 0 var(--brown); cursor: zoom-in; }
 .sheet .framePhoto img { width: 100%; height: auto; object-fit: initial; }
-.framePhoto:hover { rotate: 1deg; scale: 1.02; }
 .frame figcaption { margin-top: 12px; font-weight: 900; font-size: 15px; color: var(--ink); display: flex; gap: 8px; align-items: center; }
 .frame figcaption::before { content: "✸"; color: var(--red); }
 .empty { position: relative; display: grid; justify-items: center; text-align: center; gap: 6px; padding: 40px 20px 46px; max-width: 620px; margin: 0 auto; background: var(--cream); color: var(--brown); border: 3px solid var(--ink); border-radius: var(--wonky-2); box-shadow: 8px 9px 0 var(--gold); }
